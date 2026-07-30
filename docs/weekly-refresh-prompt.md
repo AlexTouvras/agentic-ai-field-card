@@ -2,6 +2,8 @@
 
 CI already ran discovery (GitHub only — no Anthropic/OpenAI keys). Your job is judgment + HTML edits.
 
+Runs every **Friday after** the GitHub Action discovery PR (Action ~12:00 UTC; this automation ~17:00 local / 14:00 UTC).
+
 ## Repo
 
 `AlexTouvras/agentic-ai-field-card` on branch `main`, or the open PR branch `chore/weekly-refresh-YYYY-Www` if one exists for this ISO week.

@@ -19,8 +19,8 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 | Piece | What it does |
 |---|---|
-| **Monday GitHub Action** | Discovers frameworks/tools (GitHub search + watchlist), checks doc links, bumps the stamp, opens a **PR** — **no vendor LLM API keys** |
-| **Cursor Automation** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR |
+| **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools (GitHub search + watchlist), checks doc links, bumps the stamp, opens a **PR** — **no vendor LLM API keys** |
+| **Friday Cursor Automation (17:00 local)** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
 CI uses only `GITHUB_TOKEN`. Judgment runs in Cursor Cloud Automation (web + repo tools), not Anthropic/OpenAI secrets in Actions.

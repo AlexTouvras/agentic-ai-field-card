@@ -19,20 +19,22 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 | Piece | What it does |
 |---|---|
-| **Monday GitHub Action** | Discovers new frameworks/tools, checks doc links, proposes picker updates, bumps the footer stamp, opens a **PR** |
-| **Discovery** | GitHub search + `data/watchlist.json` release signals → `data/discovery-report.md` |
-| **Propose / apply** | Heuristic ranking always; if `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set as a repo secret, the model may patch the framework picker in the PR |
+| **Monday GitHub Action** | Discovers frameworks/tools (GitHub search + watchlist), checks doc links, bumps the stamp, opens a **PR** — **no vendor LLM API keys** |
+| **Cursor Automation** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
-Manual: **Actions → Weekly field card refresh → Run workflow**.
+CI uses only `GITHUB_TOKEN`. Judgment runs in Cursor Cloud Automation (web + repo tools), not Anthropic/OpenAI secrets in Actions.
 
-Local:
+Manual CI: **Actions → Weekly field card refresh → Run workflow**.
+
+Local discovery:
 
 ```bash
 npm run discover
-npm run propose
 npm run check:links
 ```
+
+Prompt for the Cursor Automation: [`docs/weekly-refresh-prompt.md`](./docs/weekly-refresh-prompt.md).
 
 Add confirmed tools to [`data/watchlist.json`](./data/watchlist.json) so future runs track their releases.
 

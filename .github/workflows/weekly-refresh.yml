@@ -1,7 +1,7 @@
 name: Weekly field card refresh
 
-# Monday pass: link health, landscape discovery, optional LLM picker propose,
-# version stamp, PR with candidates for review.
+# Discovery + link health only (GitHub token — no vendor LLM APIs).
+# Content judgment / HTML edits: Cursor Automation (see docs/weekly-refresh-prompt.md).
 
 on:
   schedule:
@@ -34,38 +34,45 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/discover.mjs
 
-      - name: Propose / apply picker updates
-        id: propose
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: node scripts/apply-discovery.mjs
-
-      - name: Bump version stamp
-        run: node scripts/bump-version.mjs
-
-      - name: Summarize discovery
-        id: summary
+      - name: Write proposal stub for Cursor Automation
         run: |
           node <<'NODE'
           const fs = require('fs');
           const d = JSON.parse(fs.readFileSync('data/discovery-report.json','utf8'));
-          const p = fs.existsSync('data/proposed-updates.json')
-            ? JSON.parse(fs.readFileSync('data/proposed-updates.json','utf8'))
-            : {};
+          const proposal = {
+            mode: 'cursor-automation',
+            generatedAt: new Date().toISOString(),
+            candidateCount: d.summary?.candidateCount ?? 0,
+            changelog: [
+              'Discovery complete — Cursor Automation applies picker/HTML judgment (no vendor LLM API in CI)',
+            ],
+            deferred: (d.candidates || []).slice(0, 12).map((c) => ({
+              name: c.name,
+              why: `${c.priority}: ${c.kind} — ${c.reason || ''}`.trim(),
+              docs: c.docs?.[0] || null,
+              repos: c.repos || [],
+            })),
+            rows: null,
+          };
+          fs.writeFileSync('data/proposed-updates.json', JSON.stringify(proposal, null, 2) + '\n');
+          const top = (d.candidates || []).slice(0, 8)
+            .map((c) => `- ${c.name} (${c.priority}) — ${c.kind}`)
+            .join('\n') || '- none';
+          fs.writeFileSync('/tmp/discovery-top.md', top);
           const stats = [
             `candidates=${d.summary.candidateCount}`,
             `notOnCard=${d.summary.notOnCard}`,
             `novel=${d.summary.novelSearchHits}`,
             `fresh=${d.summary.freshReleases}`,
-            `mode=${p.mode || 'n/a'}`,
           ].join(' ');
           fs.appendFileSync(process.env.GITHUB_OUTPUT, `stats=${stats}\n`);
-          const top = (d.candidates || []).slice(0, 8)
-            .map(c => `- ${c.name} (${c.priority}) — ${c.kind}`)
-            .join('\n') || '- none';
-          fs.writeFileSync('/tmp/discovery-top.md', top);
           NODE
+        id: summary
+
+      - name: Bump version stamp
+        env:
+          CHANGED_NOTE: Weekly discovery ready for Cursor Automation
+        run: node scripts/bump-version.mjs
 
       - name: Open refresh PR
         env:
@@ -82,17 +89,17 @@ jobs:
             echo "Nothing to commit."
             exit 0
           fi
-          git commit -m "chore: weekly field card discovery + refresh"
+          git commit -m "chore: weekly discovery for Cursor Automation"
           git push -u origin "$BRANCH" --force
 
           BODY_FILE=$(mktemp)
           {
             echo "## Weekly field card refresh"
             echo
-            echo "Automated Monday pass:"
-            echo "- Landscape discovery (GitHub search + watchlist releases)"
-            echo "- Link check on Use / framework docs"
-            echo "- Version stamp bump"
+            echo "CI (no vendor LLM APIs):"
+            echo "- Landscape discovery via GitHub search + watchlist"
+            echo "- Doc link check"
+            echo "- Version stamp"
             echo "- Stats: \`${{ steps.summary.outputs.stats }}\`"
             echo
             if [ "${{ steps.links.outcome }}" = "success" ]; then
@@ -104,26 +111,20 @@ jobs:
             echo "### Identified candidates"
             cat /tmp/discovery-top.md
             echo
-            echo "Full report: \`data/discovery-report.md\` · machine JSON: \`data/discovery-report.json\`"
+            echo "Full report: \`data/discovery-report.md\`"
             echo
-            if [ -f data/proposed-updates.json ]; then
-              echo "### Picker proposal"
-              echo
-              echo '```'
-              node -e "const p=require('./data/proposed-updates.json'); console.log('mode:', p.mode); console.log((p.changelog||[]).join('\n')); if(p.deferred?.length){ console.log('deferred:'); for (const d of p.deferred.slice(0,8)) console.log('-', d.name+':', d.why);} "
-              echo '```'
-            fi
+            echo "### Next: Cursor Automation"
+            echo "Scheduled Cursor Automation reviews this PR / branch, updates \`index.html\` (picker + examples if needed), runs \`npm run check:links\`, and pushes to this branch."
             echo
             echo "### Before merge"
-            echo "- [ ] Accept or reject auto picker edits (if any)"
-            echo "- [ ] Promote high-priority watchlist items intentionally"
-            echo "- [ ] Add net-new tools to \`data/watchlist.json\` when you confirm them"
-            echo "- [ ] Decision table stays pattern-based (new *job* only → new layer)"
+            echo "- [ ] Cursor Automation (or human) applied judgment from discovery"
+            echo "- [ ] Link check still green"
+            echo "- [ ] Decision table unchanged unless a new *job* appeared"
           } > "$BODY_FILE"
 
           EXISTING=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" --body-file "$BODY_FILE"
+            gh pr edit "$EXISTING" --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE"
             echo "Updated PR #$EXISTING"
           else
             gh pr create --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE"

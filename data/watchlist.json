@@ -1,0 +1,133 @@
+{
+  "frameworks": [
+    {
+      "name": "LangGraph",
+      "repos": ["langchain-ai/langgraph"],
+      "docs": ["https://langchain-ai.github.io/langgraph/"],
+      "onCard": true,
+      "constraint": "control"
+    },
+    {
+      "name": "CrewAI",
+      "repos": ["crewAIInc/crewAI"],
+      "docs": ["https://docs.crewai.com/"],
+      "onCard": true,
+      "constraint": "speed"
+    },
+    {
+      "name": "LlamaIndex",
+      "repos": ["run-llama/llama_index"],
+      "docs": ["https://docs.llamaindex.ai/"],
+      "onCard": true,
+      "constraint": "data"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "aliases": ["MS Agent Fw", "agent-framework"],
+      "repos": ["microsoft/agent-framework"],
+      "docs": ["https://learn.microsoft.com/en-us/agent-framework/overview/"],
+      "onCard": true,
+      "constraint": "enterprise"
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "aliases": ["OpenAI Agents", "openai-agents-python", "OpenAI</a> /"],
+      "repos": ["openai/openai-agents-python"],
+      "docs": ["https://openai.github.io/openai-agents-python/"],
+      "onCard": true,
+      "constraint": "handoffs"
+    },
+    {
+      "name": "Claude Agent SDK",
+      "aliases": ["Claude Agent", "claude-agent-sdk", "Claude</a> SDKs", "code.claude.com/docs/en/agent-sdk"],
+      "repos": ["anthropics/claude-agent-sdk-python", "anthropics/claude-agent-sdk-typescript"],
+      "docs": ["https://code.claude.com/docs/en/agent-sdk/overview"],
+      "onCard": true,
+      "constraint": "anthropic"
+    },
+    {
+      "name": "Pydantic AI",
+      "repos": ["pydantic/pydantic-ai"],
+      "docs": ["https://ai.pydantic.dev/"],
+      "onCard": true,
+      "constraint": "typed"
+    },
+    {
+      "name": "Google ADK",
+      "repos": ["google/adk-python"],
+      "docs": ["https://google.github.io/adk-docs/"],
+      "onCard": false,
+      "constraint": "google"
+    },
+    {
+      "name": "AG2",
+      "repos": ["ag2ai/ag2"],
+      "docs": ["https://docs.ag2.ai/"],
+      "onCard": false,
+      "constraint": "multiagent"
+    },
+    {
+      "name": "Semantic Kernel",
+      "repos": ["microsoft/semantic-kernel"],
+      "docs": ["https://learn.microsoft.com/en-us/semantic-kernel/"],
+      "onCard": false,
+      "constraint": "enterprise"
+    },
+    {
+      "name": "Haystack",
+      "repos": ["deepset-ai/haystack"],
+      "docs": ["https://docs.haystack.deepset.ai/"],
+      "onCard": false,
+      "constraint": "data"
+    },
+    {
+      "name": "Mastra",
+      "repos": ["mastra-ai/mastra"],
+      "docs": ["https://mastra.ai/docs"],
+      "onCard": false,
+      "constraint": "typescript"
+    },
+    {
+      "name": "Vercel AI SDK",
+      "repos": ["vercel/ai"],
+      "docs": ["https://sdk.vercel.ai/docs"],
+      "onCard": false,
+      "constraint": "typescript"
+    },
+    {
+      "name": "Dapr Agents",
+      "repos": ["dapr/dapr-agents"],
+      "docs": ["https://docs.dapr.io/developing-ai/dapr-agents/"],
+      "onCard": false,
+      "constraint": "durable"
+    }
+  ],
+  "protocols": [
+    {
+      "name": "MCP",
+      "aliases": ["modelcontextprotocol", "Model Context Protocol"],
+      "repos": ["modelcontextprotocol/specification", "modelcontextprotocol/servers"],
+      "docs": ["https://modelcontextprotocol.io/"],
+      "onCard": true
+    },
+    {
+      "name": "A2A",
+      "aliases": ["Agent2Agent", "a2a-protocol"],
+      "repos": ["a2aproject/A2A"],
+      "docs": ["https://a2a-protocol.org/"],
+      "onCard": true
+    }
+  ],
+  "searchQueries": [
+    "AI agent framework stars:>500",
+    "multi-agent orchestration library stars:>300",
+    "\"agent sdk\" stars:>200",
+    "Model Context Protocol server stars:>200"
+  ],
+  "ignoreRepos": [
+    "langchain-ai/langchain",
+    "langchain-ai/langchainjs",
+    "obra/superpowers",
+    "microsoft/autogen"
+  ]
+}

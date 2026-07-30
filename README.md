@@ -19,18 +19,22 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 | Piece | What it does |
 |---|---|
-| **Monday GitHub Action** | Checks every doc link in `index.html`, bumps the footer version stamp, opens a **PR** with a human checklist |
-| **Broken-link issue** | If any Use/framework URL fails, opens a labeled issue |
-| **Content pass** | Use [`docs/weekly-refresh-prompt.md`](./docs/weekly-refresh-prompt.md) in Cursor (or any agent) to update frameworks/examples; open/update the PR |
+| **Monday GitHub Action** | Discovers new frameworks/tools, checks doc links, proposes picker updates, bumps the footer stamp, opens a **PR** |
+| **Discovery** | GitHub search + `data/watchlist.json` release signals → `data/discovery-report.md` |
+| **Propose / apply** | Heuristic ranking always; if `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set as a repo secret, the model may patch the framework picker in the PR |
+| **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
-Manual triggers: **Actions → Weekly field card refresh → Run workflow**.
+Manual: **Actions → Weekly field card refresh → Run workflow**.
 
 Local:
 
 ```bash
+npm run discover
+npm run propose
 npm run check:links
-CHANGED_NOTE="Fixed MCP docs URL" npm run bump:version
 ```
+
+Add confirmed tools to [`data/watchlist.json`](./data/watchlist.json) so future runs track their releases.
 
 ## What stays vs what churns
 

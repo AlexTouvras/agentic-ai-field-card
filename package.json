@@ -4,6 +4,9 @@
   "type": "module",
   "scripts": {
     "check:links": "node scripts/check-links.mjs",
-    "bump:version": "node scripts/bump-version.mjs"
+    "bump:version": "node scripts/bump-version.mjs",
+    "discover": "node scripts/discover.mjs",
+    "propose": "node scripts/apply-discovery.mjs",
+    "refresh": "node scripts/check-links.mjs; node scripts/discover.mjs; node scripts/apply-discovery.mjs; node scripts/bump-version.mjs"
   }
 }

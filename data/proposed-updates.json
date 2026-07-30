@@ -1,0 +1,186 @@
+{
+  "rows": [
+    {
+      "label": "LangGraph",
+      "blurb": "Stateful, auditable, HITL, durable checkpoints",
+      "links": [
+        {
+          "href": "https://langchain-ai.github.io/langgraph/",
+          "label": "LangGraph"
+        }
+      ]
+    },
+    {
+      "label": "CrewAI",
+      "blurb": "Fastest role-based prototype",
+      "links": [
+        {
+          "href": "https://docs.crewai.com/",
+          "label": "CrewAI"
+        }
+      ]
+    },
+    {
+      "label": "LlamaIndex",
+      "blurb": "RAG / data-first agents",
+      "links": [
+        {
+          "href": "https://docs.llamaindex.ai/",
+          "label": "LlamaIndex"
+        }
+      ]
+    },
+    {
+      "label": "MS Agent Fw",
+      "blurb": "Azure / .NET enterprise path",
+      "links": [
+        {
+          "href": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+          "label": "MS Agent Fw"
+        }
+      ]
+    },
+    {
+      "label": "OpenAI / Claude SDKs",
+      "blurb": "Handoffs or Anthropic-native loops",
+      "links": [
+        {
+          "href": "https://openai.github.io/openai-agents-python/",
+          "label": "OpenAI"
+        },
+        {
+          "href": "https://code.claude.com/docs/en/agent-sdk/overview",
+          "label": "Claude"
+        }
+      ]
+    },
+    {
+      "label": "Pydantic AI",
+      "blurb": "Schema-first typed Python",
+      "links": [
+        {
+          "href": "https://ai.pydantic.dev/",
+          "label": "Pydantic AI"
+        }
+      ]
+    },
+    {
+      "label": "Google ADK",
+      "blurb": "google path — auto-suggested",
+      "links": [
+        {
+          "href": "https://google.github.io/adk-docs/",
+          "label": "Google ADK"
+        }
+      ]
+    }
+  ],
+  "changelog": [
+    "Added candidate Google ADK from discovery (watchlist-not-on-card)"
+  ],
+  "deferred": [
+    {
+      "name": "AG2",
+      "why": "Priority medium — left for human review"
+    },
+    {
+      "name": "Semantic Kernel",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "Haystack",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "Mastra",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "Vercel AI SDK",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "superpowers",
+      "why": "No docs URL to link from the card"
+    },
+    {
+      "name": "langchain",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "MetaGPT",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "autogen",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "nanobot",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "hyperframes",
+      "why": "No docs URL to link from the card"
+    },
+    {
+      "name": "AstrBot",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "nanoclaw",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "Anthropic-Cybersecurity-Skills",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "Open-AutoGLM",
+      "why": "Picker full (7); review for replace"
+    },
+    {
+      "name": "12-factor-agents",
+      "why": "No docs URL to link from the card"
+    },
+    {
+      "name": "mcp-chrome",
+      "why": "No docs URL to link from the card"
+    },
+    {
+      "name": "AG2",
+      "why": "Tracked in watchlist but not present on the public card"
+    },
+    {
+      "name": "Semantic Kernel",
+      "why": "Tracked in watchlist but not present on the public card"
+    },
+    {
+      "name": "Haystack",
+      "why": "Tracked in watchlist but not present on the public card"
+    },
+    {
+      "name": "Mastra",
+      "why": "Tracked in watchlist but not present on the public card"
+    },
+    {
+      "name": "Vercel AI SDK",
+      "why": "Tracked in watchlist but not present on the public card"
+    },
+    {
+      "name": "superpowers",
+      "why": "An agentic skills framework & software development methodology that works."
+    },
+    {
+      "name": "langchain",
+      "why": "The agent engineering platform."
+    },
+    {
+      "name": "MetaGPT",
+      "why": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming"
+    }
+  ],
+  "mode": "heuristic",
+  "generatedAt": "2026-07-30T12:37:37.942Z",
+  "candidateCount": 19
+}

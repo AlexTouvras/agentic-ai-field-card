@@ -1,12 +1,10 @@
 name: Weekly field card refresh
 
-# Keeps the card honest: link health + version stamp.
-# Content edits (frameworks, new rows) land via PR from this workflow's
-# checklist, or from Cursor Automation using docs/weekly-refresh-prompt.md
+# Monday pass: link health, landscape discovery, optional LLM picker propose,
+# version stamp, PR with candidates for review.
 
 on:
   schedule:
-    # Monday 07:00 UTC
     - cron: "0 7 * * 1"
   workflow_dispatch:
 
@@ -30,10 +28,44 @@ jobs:
         continue-on-error: true
         run: node scripts/check-links.mjs
 
-      - name: Bump version stamp
+      - name: Discover frameworks and tools
+        id: discover
         env:
-          CHANGED_NOTE: ${{ steps.links.outcome == 'success' && 'Weekly review — doc links OK' || 'Weekly review — some doc links failed (see PR / issue)' }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/discover.mjs
+
+      - name: Propose / apply picker updates
+        id: propose
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/apply-discovery.mjs
+
+      - name: Bump version stamp
         run: node scripts/bump-version.mjs
+
+      - name: Summarize discovery
+        id: summary
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const d = JSON.parse(fs.readFileSync('data/discovery-report.json','utf8'));
+          const p = fs.existsSync('data/proposed-updates.json')
+            ? JSON.parse(fs.readFileSync('data/proposed-updates.json','utf8'))
+            : {};
+          const stats = [
+            `candidates=${d.summary.candidateCount}`,
+            `notOnCard=${d.summary.notOnCard}`,
+            `novel=${d.summary.novelSearchHits}`,
+            `fresh=${d.summary.freshReleases}`,
+            `mode=${p.mode || 'n/a'}`,
+          ].join(' ');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `stats=${stats}\n`);
+          const top = (d.candidates || []).slice(0, 8)
+            .map(c => `- ${c.name} (${c.priority}) — ${c.kind}`)
+            .join('\n') || '- none';
+          fs.writeFileSync('/tmp/discovery-top.md', top);
+          NODE
 
       - name: Open refresh PR
         env:
@@ -45,12 +77,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git checkout -B "$BRANCH"
-          git add index.html data/link-report.json
+          git add index.html data/link-report.json data/discovery-report.json data/discovery-report.md data/proposed-updates.json data/watchlist.json || true
           if git diff --staged --quiet; then
             echo "Nothing to commit."
             exit 0
           fi
-          git commit -m "chore: weekly field card refresh"
+          git commit -m "chore: weekly field card discovery + refresh"
           git push -u origin "$BRANCH" --force
 
           BODY_FILE=$(mktemp)
@@ -58,26 +90,35 @@ jobs:
             echo "## Weekly field card refresh"
             echo
             echo "Automated Monday pass:"
-            echo "- Bumped footer version stamp (Reviewed / Next)"
-            echo "- Re-checked Use-column and framework doc links"
+            echo "- Landscape discovery (GitHub search + watchlist releases)"
+            echo "- Link check on Use / framework docs"
+            echo "- Version stamp bump"
+            echo "- Stats: \`${{ steps.summary.outputs.stats }}\`"
             echo
             if [ "${{ steps.links.outcome }}" = "success" ]; then
               echo "**Link check:** all OK"
             else
-              echo "**Link check:** failures — see \`data/link-report.json\` and fix hrefs before merge."
+              echo "**Link check:** failures — see \`data/link-report.json\`"
+            fi
+            echo
+            echo "### Identified candidates"
+            cat /tmp/discovery-top.md
+            echo
+            echo "Full report: \`data/discovery-report.md\` · machine JSON: \`data/discovery-report.json\`"
+            echo
+            if [ -f data/proposed-updates.json ]; then
+              echo "### Picker proposal"
               echo
               echo '```'
-              node -e "const r=require('./data/link-report.json'); for (const x of r.results.filter(x=>!x.ok)) console.log(x.status, x.url, x.error||'')"
+              node -e "const p=require('./data/proposed-updates.json'); console.log('mode:', p.mode); console.log((p.changelog||[]).join('\n')); if(p.deferred?.length){ console.log('deferred:'); for (const d of p.deferred.slice(0,8)) console.log('-', d.name+':', d.why);} "
               echo '```'
             fi
             echo
-            echo "### Still needs a human (or Cursor Automation)"
-            echo "- [ ] Framework picker still matches the field (swap rows, don't rewrite the decision table)"
-            echo "- [ ] Example nouns still read as current"
-            echo "- [ ] No new *job* that deserves a new stack layer (new brand ≠ new layer)"
-            echo "- [ ] Update **Changed** line if you edited content beyond the stamp"
-            echo
-            echo "Prompt for content pass: \`docs/weekly-refresh-prompt.md\`"
+            echo "### Before merge"
+            echo "- [ ] Accept or reject auto picker edits (if any)"
+            echo "- [ ] Promote high-priority watchlist items intentionally"
+            echo "- [ ] Add net-new tools to \`data/watchlist.json\` when you confirm them"
+            echo "- [ ] Decision table stays pattern-based (new *job* only → new layer)"
           } > "$BODY_FILE"
 
           EXISTING=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number // empty')
@@ -85,7 +126,7 @@ jobs:
             gh pr edit "$EXISTING" --body-file "$BODY_FILE"
             echo "Updated PR #$EXISTING"
           else
-            gh pr create --title "chore: weekly field card refresh" --body-file "$BODY_FILE"
+            gh pr create --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE"
           fi
 
       - name: Open issue on broken links
@@ -94,7 +135,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TITLE="Broken doc links on field card ($(date -u +%Y-%m-%d))"
-          # Avoid duplicate open issues with same title prefix
           OPEN=$(gh issue list --label field-card-links --state open --json title --jq 'length')
           if [ "$OPEN" != "0" ]; then
             echo "Open link issue already exists; skipping."
@@ -102,7 +142,7 @@ jobs:
           fi
           BODY=$(mktemp)
           {
-            echo "Weekly link check failed. See \`data/link-report.json\` on branch \`chore/weekly-refresh-$(date -u +%Y-W%V)\`."
+            echo "Weekly link check failed. See \`data/link-report.json\`."
             echo
             echo '```'
             node -e "const r=require('./data/link-report.json'); for (const x of r.results.filter(x=>!x.ok)) console.log(x.status, x.url, x.error||'')"

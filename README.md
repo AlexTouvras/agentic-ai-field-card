@@ -20,23 +20,33 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 | Piece | What it does |
 |---|---|
 | **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools (GitHub search + watchlist), checks doc links, bumps the stamp, opens a **PR** — **no vendor LLM API keys** |
-| **Friday Cursor Automation (17:00 local)** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR |
+| **Friday Cursor Automation (17:00 local)** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR, triggers Slack notify |
+| **Slack #orbit Approve** | Incoming webhook + signed Approve/Skip links on alextouvras.com (same gate as weekly Writes). Approve squash-merges the PR; Skip closes it |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
-CI uses only `GITHUB_TOKEN`. Judgment runs in Cursor Cloud Automation (web + repo tools), not Anthropic/OpenAI secrets in Actions.
+CI uses only `GITHUB_TOKEN` for discovery. Judgment runs in Cursor Cloud Automation. Approve is **not** auto-merge from the agent — you confirm in Slack (confirm page first, like essays).
 
-Manual CI: **Actions → Weekly field card refresh → Run workflow**.
+### Secrets (field-card repo)
 
-Local discovery:
+Copy from Orbit / Vercel as needed:
+
+| Secret | Purpose |
+|---|---|
+| `SLACK_ORBIT_WEBHOOK_URL` (or `SLACK_WEBHOOK_URL`) | Incoming webhook for #orbit |
+| `WEEKLY_WRITE_SECRET` or `CRON_SECRET` or `FIELD_CARD_ACTION_SECRET` | HMAC for Approve/Skip tokens (must match Orbit) |
+
+### Secrets (Orbit / Vercel)
+
+| Secret | Purpose |
+|---|---|
+| `GITHUB_TOKEN` or `FIELD_CARD_GITHUB_TOKEN` | Must be able to merge/close PRs on `AlexTouvras/agentic-ai-field-card` |
+| Same signing secret as above | Verify Approve/Skip tokens |
+
+Manual Slack notify:
 
 ```bash
-npm run discover
-npm run check:links
+gh workflow run "Notify Slack approve" -f pr_number=1
 ```
-
-Prompt for the Cursor Automation: [`docs/weekly-refresh-prompt.md`](./docs/weekly-refresh-prompt.md).
-
-Add confirmed tools to [`data/watchlist.json`](./data/watchlist.json) so future runs track their releases.
 
 ## What stays vs what churns
 

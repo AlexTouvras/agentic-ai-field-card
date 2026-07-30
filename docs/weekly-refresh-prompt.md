@@ -1,6 +1,6 @@
 # Weekly field card — Cursor Automation
 
-CI already ran discovery (GitHub only — no Anthropic/OpenAI keys). Your job is judgment + HTML edits.
+CI already ran discovery (GitHub only — no Anthropic/OpenAI keys). Your job is judgment + HTML edits + Slack notify.
 
 Runs every **Friday after** the GitHub Action discovery PR (Action ~12:00 UTC; this automation ~17:00 local / 14:00 UTC).
 
@@ -22,9 +22,15 @@ Runs every **Friday after** the GitHub Action discovery PR (Action ~12:00 UTC; t
 5. Set the footer **Changed** line to a few concrete facts; leave version stamp if CI already bumped it this week.
 6. If a candidate is confirmed for future tracking, add/update `data/watchlist.json`.
 7. Commit and push to the weekly PR branch. Open or update the PR. Do not merge unless explicitly asked. Do not force-push `main`.
+8. **Notify #orbit (Orbit-style Approve gate):**
+   ```bash
+   gh workflow run "Notify Slack approve" --repo AlexTouvras/agentic-ai-field-card -f pr_number=<PR_NUMBER>
+   ```
+   That posts Approve & merge / Skip links to Slack (same confirm-page pattern as weekly Writes). Do **not** merge from chat.
 
 ## Done when
 
 - Discovery candidates reviewed (accepted, deferred, or rejected with reason in the PR)
 - Link check exits 0
-- PR body lists what changed on the card
+- Slack #orbit has the Approve / Skip message
+- PR left open for human Approve (or Skip)

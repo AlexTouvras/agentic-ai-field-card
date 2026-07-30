@@ -1,36 +1,30 @@
 # Weekly field card — Cursor Automation
 
-CI already ran discovery (GitHub only — no Anthropic/OpenAI keys). Your job is judgment + HTML edits + Slack notify.
-
-Runs every **Friday after** the GitHub Action discovery PR (Action ~12:00 UTC; this automation ~17:00 local / 14:00 UTC).
-
-## Repo
-
-`AlexTouvras/agentic-ai-field-card` on branch `main`, or the open PR branch `chore/weekly-refresh-YYYY-Www` if one exists for this ISO week.
+Each Friday the automation **runs discovery itself**, updates the card if earned, opens/updates the weekly PR, then notifies #orbit. Do not assume CI left artifacts waiting on `main`.
 
 ## Steps
 
-1. Check out the weekly refresh PR branch if open; otherwise create/update `chore/weekly-refresh-YYYY-Www` from `main`.
-2. Read `data/discovery-report.md` and `data/proposed-updates.json` (deferred candidates).
+1. Check out `AlexTouvras/agentic-ai-field-card`. Prefer open branch `chore/weekly-refresh-YYYY-Www` for this ISO week; otherwise create/update it from `main`.
+2. Run `npm run discover` (GitHub access via `gh` in the Cloud Agent). Read `data/discovery-report.md`.
 3. Update `index.html` only where earned:
    - Framework picker ≤ 7 rows; swap by constraint (control, speed, data, enterprise, handoffs, typed) — not hype.
-   - Do not invent docs URLs; use links from the discovery report or existing card links.
-   - Decision table: change only if a new *job* appeared (new brand ≠ new layer).
+   - Do not invent docs URLs; use discovery report or existing card links.
+   - Decision table: only if a new *job* appeared (new brand ≠ new layer).
    - Keep Use labels short and linked; nuance in Example.
    - No editor notes on the public HTML.
 4. Run `node scripts/check-links.mjs` and fix failures.
-5. Set the footer **Changed** line to a few concrete facts; leave version stamp if CI already bumped it this week.
-6. If a candidate is confirmed for future tracking, add/update `data/watchlist.json`.
-7. Commit and push to the weekly PR branch. Open or update the PR. Do not merge unless explicitly asked. Do not force-push `main`.
-8. **Notify #orbit (Orbit-style Approve gate):**
+5. Update the footer **Changed** line; bump version with `npm run bump:version` if needed.
+6. Update `data/watchlist.json` for tools you confirm for ongoing tracking.
+7. Commit and push to the weekly PR. Do not merge. Do not force-push `main`.
+8. Notify #orbit:
    ```bash
    gh workflow run "Notify Slack approve" --repo AlexTouvras/agentic-ai-field-card -f pr_number=<PR_NUMBER>
    ```
-   That posts Approve & merge / Skip links to Slack (same confirm-page pattern as weekly Writes). Do **not** merge from chat.
+   Stop. Human Approves/Skips in Slack. Never merge from the automation.
 
 ## Done when
 
-- Discovery candidates reviewed (accepted, deferred, or rejected with reason in the PR)
+- Discovery ran this session
 - Link check exits 0
-- Slack #orbit has the Approve / Skip message
-- PR left open for human Approve (or Skip)
+- #orbit has Approve / Skip
+- PR left open for the human gate

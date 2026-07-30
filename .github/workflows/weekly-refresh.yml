@@ -1,0 +1,112 @@
+name: Weekly field card refresh
+
+# Keeps the card honest: link health + version stamp.
+# Content edits (frameworks, new rows) land via PR from this workflow's
+# checklist, or from Cursor Automation using docs/weekly-refresh-prompt.md
+
+on:
+  schedule:
+    # Monday 07:00 UTC
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check documentation links
+        id: links
+        continue-on-error: true
+        run: node scripts/check-links.mjs
+
+      - name: Bump version stamp
+        env:
+          CHANGED_NOTE: ${{ steps.links.outcome == 'success' && 'Weekly review — doc links OK' || 'Weekly review — some doc links failed (see PR / issue)' }}
+        run: node scripts/bump-version.mjs
+
+      - name: Open refresh PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="chore/weekly-refresh-$(date -u +%Y-W%V)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B "$BRANCH"
+          git add index.html data/link-report.json
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore: weekly field card refresh"
+          git push -u origin "$BRANCH" --force
+
+          BODY_FILE=$(mktemp)
+          {
+            echo "## Weekly field card refresh"
+            echo
+            echo "Automated Monday pass:"
+            echo "- Bumped footer version stamp (Reviewed / Next)"
+            echo "- Re-checked Use-column and framework doc links"
+            echo
+            if [ "${{ steps.links.outcome }}" = "success" ]; then
+              echo "**Link check:** all OK"
+            else
+              echo "**Link check:** failures — see \`data/link-report.json\` and fix hrefs before merge."
+              echo
+              echo '```'
+              node -e "const r=require('./data/link-report.json'); for (const x of r.results.filter(x=>!x.ok)) console.log(x.status, x.url, x.error||'')"
+              echo '```'
+            fi
+            echo
+            echo "### Still needs a human (or Cursor Automation)"
+            echo "- [ ] Framework picker still matches the field (swap rows, don't rewrite the decision table)"
+            echo "- [ ] Example nouns still read as current"
+            echo "- [ ] No new *job* that deserves a new stack layer (new brand ≠ new layer)"
+            echo "- [ ] Update **Changed** line if you edited content beyond the stamp"
+            echo
+            echo "Prompt for content pass: \`docs/weekly-refresh-prompt.md\`"
+          } > "$BODY_FILE"
+
+          EXISTING=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --body-file "$BODY_FILE"
+            echo "Updated PR #$EXISTING"
+          else
+            gh pr create --title "chore: weekly field card refresh" --body-file "$BODY_FILE"
+          fi
+
+      - name: Open issue on broken links
+        if: steps.links.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Broken doc links on field card ($(date -u +%Y-%m-%d))"
+          # Avoid duplicate open issues with same title prefix
+          OPEN=$(gh issue list --label field-card-links --state open --json title --jq 'length')
+          if [ "$OPEN" != "0" ]; then
+            echo "Open link issue already exists; skipping."
+            exit 0
+          fi
+          BODY=$(mktemp)
+          {
+            echo "Weekly link check failed. See \`data/link-report.json\` on branch \`chore/weekly-refresh-$(date -u +%Y-W%V)\`."
+            echo
+            echo '```'
+            node -e "const r=require('./data/link-report.json'); for (const x of r.results.filter(x=>!x.ok)) console.log(x.status, x.url, x.error||'')"
+            echo '```'
+          } > "$BODY"
+          gh issue create --title "$TITLE" --label "field-card-links" --body-file "$BODY" || \
+            gh issue create --title "$TITLE" --body-file "$BODY"

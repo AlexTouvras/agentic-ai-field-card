@@ -1,0 +1,9 @@
+{
+  "name": "agentic-ai-field-card",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:links": "node scripts/check-links.mjs",
+    "bump:version": "node scripts/bump-version.mjs"
+  }
+}

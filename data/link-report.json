@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-07-30T12:22:17.364Z",
+  "total": 18,
+  "failed": 0,
+  "results": [
+    {
+      "url": "https://a2a-protocol.org/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://ai.pydantic.dev/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://alextouvras.com",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://cursor.com/docs/rules",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://cursor.com/docs/skills",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://docs.crewai.com/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://docs.llamaindex.ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://langchain-ai.github.io/langgraph/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/overview/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://modelcontextprotocol.io/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://openai.github.io/openai-agents-python/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/evals",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/fine-tuning",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/function-calling",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "ok": true,
+      "status": 200
+    }
+  ]
+}

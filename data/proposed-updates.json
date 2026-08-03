@@ -1,107 +1,20 @@
 {
-  "mode": "cursor-automation",
-  "generatedAt": "2026-07-31T14:21:12.275Z",
+  "mode": "cursor-judgment",
+  "generatedAt": "2026-08-03T14:46:00.000Z",
   "candidateCount": 19,
   "changelog": [
-    "Discovery complete — Cursor Automation applies picker/HTML judgment (no vendor LLM API in CI)"
+    "Added Google ADK to framework picker (google / Vertex path; high-priority watchlist gap)",
+    "Deferred Semantic Kernel — enterprise already covered by MS Agent Framework",
+    "Deferred Haystack — data/RAG already covered by LlamaIndex",
+    "Deferred Mastra, Vercel AI SDK, AG2, and novel search hits — no new constraint earned a swap"
   ],
   "deferred": [
-    {
-      "name": "Google ADK",
-      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://google.github.io/adk-docs/",
-      "repos": [
-        "google/adk-python"
-      ]
-    },
-    {
-      "name": "AG2",
-      "why": "medium: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://docs.ag2.ai/",
-      "repos": [
-        "ag2ai/ag2"
-      ]
-    },
-    {
-      "name": "Semantic Kernel",
-      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://learn.microsoft.com/en-us/semantic-kernel/",
-      "repos": [
-        "microsoft/semantic-kernel"
-      ]
-    },
-    {
-      "name": "Haystack",
-      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://docs.haystack.deepset.ai/",
-      "repos": [
-        "deepset-ai/haystack"
-      ]
-    },
-    {
-      "name": "Mastra",
-      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://mastra.ai/docs",
-      "repos": [
-        "mastra-ai/mastra"
-      ]
-    },
-    {
-      "name": "Vercel AI SDK",
-      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://sdk.vercel.ai/docs",
-      "repos": [
-        "vercel/ai"
-      ]
-    },
-    {
-      "name": "Dapr Agents",
-      "why": "low: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
-      "docs": "https://docs.dapr.io/developing-ai/dapr-agents/",
-      "repos": [
-        "dapr/dapr-agents"
-      ]
-    },
-    {
-      "name": "MetaGPT",
-      "why": "high: github-search-novel — 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "docs": "https://atoms.dev/",
-      "repos": [
-        "FoundationAgents/MetaGPT"
-      ]
-    },
-    {
-      "name": "nanobot",
-      "why": "high: github-search-novel — Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
-      "docs": "https://nanobot.wiki",
-      "repos": [
-        "HKUDS/nanobot"
-      ]
-    },
-    {
-      "name": "hyperframes",
-      "why": "high: github-search-novel — Write HTML. Render video. Built for agents.",
-      "docs": null,
-      "repos": [
-        "heygen-com/hyperframes"
-      ]
-    },
-    {
-      "name": "AstrBot",
-      "why": "high: github-search-novel — AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "docs": "https://astrbot.app",
-      "repos": [
-        "AstrBotDevs/AstrBot"
-      ]
-    },
-    {
-      "name": "nanoclaw",
-      "why": "high: github-search-novel — A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
-      "docs": "https://nanoclaw.dev",
-      "repos": [
-        "nanocoai/nanoclaw"
-      ]
-    }
+    { "name": "Semantic Kernel", "why": "Enterprise path already covered by MS Agent Framework" },
+    { "name": "Haystack", "why": "Data/RAG path already covered by LlamaIndex" },
+    { "name": "Mastra", "why": "Picker full; no unique constraint vs incumbents" },
+    { "name": "Vercel AI SDK", "why": "Picker full; no unique constraint vs incumbents" },
+    { "name": "AG2", "why": "Medium priority; multi-agent already on ladder" },
+    { "name": "MetaGPT / novel hits", "why": "Hype/star noise — not one-pager jobs" }
   ],
   "rows": null
 }

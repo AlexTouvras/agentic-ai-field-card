@@ -25,232 +25,225 @@ export default function LongevityAssessment() {
       <Stack gap={8}>
         <H1>Field card longevity</H1>
         <Text tone="secondary">
-          Will the weekly loop keep the card current as agentic AI evolves over
-          the next several years?
+          Re-evaluation after durability hardening (commit 8fd706c) — 2026-08-03
         </Text>
       </Stack>
 
-      <Callout tone="warning" title="Verdict">
-        Strong for 1–2 years of framework and link churn if the Friday loop and
-        Slack Approve stay active. Not sufficient alone for multi-year paradigm
-        shifts — discovery finds products; it does not redesign the card’s job
-        model.
+      <Callout tone="success" title="Updated verdict">
+        Operationally durable for product and link churn over the next 1–3 years,
+        if Friday Automation and Slack Approve keep running. Conceptually durable
+        only if the quarterly ontology pass in docs/durability.md actually
+        happens. Still not an unattended multi-year field oracle.
       </Callout>
 
       <Grid columns={4} gap={12}>
-        <Stat value="1–2 yr" label="Framework / URL churn" tone="success" />
-        <Stat value="Mixed" label="Concept layers" tone="warning" />
-        <Stat value="Human" label="Gate dependency" tone="warning" />
-        <Stat value="High" label="Search noise today" tone="danger" />
+        <Stat value="1–3 yr" label="Framework / URL churn" tone="success" />
+        <Stat value="Process" label="Concept layers" tone="warning" />
+        <Stat value="Visible" label="Silent-fail risk" tone="success" />
+        <Stat value="Moderate" label="Search noise now" tone="warning" />
       </Grid>
+
+      <H2>What changed since the first pass</H2>
+      <Table
+        headers={["Gap (before)", "Fix landed", "Effect on longevity"]}
+        rows={[
+          [
+            "Star-noise drowned candidates",
+            "Score + noise filters, ignoreRepos, noisePatterns",
+            "Judgment spends time on real swaps; less Approve fatigue",
+          ],
+          [
+            "Automation could die silently",
+            "Saturday check + Decision: contract",
+            "Missed weeks become GitHub issues, not quiet drift",
+          ],
+          [
+            "No long-horizon process",
+            "docs/durability.md quarterly ontology",
+            "Layers/constraints get a scheduled human redesign slot",
+          ],
+          [
+            "Search queries too broad",
+            "Language-scoped + higher star floors",
+            "Fewer irrelevant novel hits entering the funnel",
+          ],
+        ]}
+        rowTone={["success", "success", "success", "success"]}
+      />
+
+      <Callout tone="info" title="Evidence from smoke discovery">
+        After filters: 14 candidates (was 19), 13 rejected as noise, MetaGPT /
+        chatbot junk gone. Remaining novel hits skew toward protocol SDKs and
+        real orchestration libs — still need judgment deferrals, but signal is
+        cleaner.
+      </Callout>
 
       <Divider />
 
-      <H2>What the system actually does</H2>
-      <Grid columns={3} gap={12}>
+      <H2>Loop health (current design)</H2>
+      <Grid columns={4} gap={12}>
         <Card>
-          <CardHeader>CI (Friday 12:00 UTC)</CardHeader>
+          <CardHeader>Fri CI</CardHeader>
           <CardBody>
-            <Stack gap={6}>
-              <Text>Link check → issues on breakage</Text>
-              <Text>GitHub search + watchlist discovery</Text>
-              <Text>Version stamp + discovery PR</Text>
-              <Text tone="secondary" size="small">
-                No LLM. Cheap and durable.
-              </Text>
-            </Stack>
+            <Text size="small">
+              Discover + links + discovery PR. No vendor LLM.
+            </Text>
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Cursor Automation (17:00)</CardHeader>
+          <CardHeader>Fri Automation</CardHeader>
           <CardBody>
-            <Stack gap={6}>
-              <Text>Judge update vs no-change</Text>
-              <Text>Edit picker / URLs when earned</Text>
-              <Text>Write PR Summary + Slack notify</Text>
-              <Text tone="secondary" size="small">
-                Quality gate — also a single point of failure.
-              </Text>
-            </Stack>
+            <Text size="small">
+              Decision: update|no-change, optional HTML edit, Slack notify.
+            </Text>
           </CardBody>
         </Card>
         <Card>
-          <CardHeader>Human (#orbit)</CardHeader>
+          <CardHeader>Sat SLA</CardHeader>
           <CardBody>
-            <Stack gap={6}>
-              <Text>Preview proposed HTML</Text>
-              <Text>Approve or Skip</Text>
-              <Text>Squash-merge only via Approve</Text>
-              <Text tone="secondary" size="small">
-                Protects the one-pager; also caps unattended freshness.
-              </Text>
-            </Stack>
+            <Text size="small">
+              field-card-judgment issue if Decision: missing after ~20h.
+            </Text>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>Human gate</CardHeader>
+          <CardBody>
+            <Text size="small">
+              #orbit preview → Approve/Skip. Still required for merge.
+            </Text>
           </CardBody>
         </Card>
       </Grid>
 
-      <H2>Design strengths for longevity</H2>
+      <H2>Horizon scorecard (revised)</H2>
       <Table
-        headers={["Choice", "Why it ages well"]}
+        headers={["Horizon", "Before", "Now", "Still needs"]}
         rows={[
           [
-            "Stable vs churn split",
-            "4-layer stack, problem→use, ladder, anti-patterns stay; picker + product nouns churn",
+            "12–24 months",
+            "Likely OK if loop active",
+            "Strong — noise down, missed judgment visible",
+            "Automation path bound to new repo folder",
           ],
           [
-            "Picker ≤ 7, swap by constraint",
-            "Forces replacement over accumulation — card cannot become a directory",
+            "Years 2–3",
+            "Watchlist/search drift risk",
+            "Plausible with quarterly ontology",
+            "Actually run the quarterly checklist",
           ],
           [
-            "New layer only for new job",
-            "Renames and hype do not rewrite the ontology",
-          ],
-          [
-            "CI without vendor LLM",
-            "Discovery keeps running even if model APIs / pricing shift",
-          ],
-          [
-            "Human Approve before merge",
-            "Prevents silent degradation from noisy GitHub-star candidates",
-          ],
-        ]}
-      />
-
-      <H2>Where it will struggle over years</H2>
-      <Stack gap={12}>
-        <Card>
-          <CardHeader
-            trailing={<Pill tone="danger" size="small">Structural</Pill>}
-          >
-            Discovery is GitHub-star biased
-          </CardHeader>
-          <CardBody>
-            <Text>
-              Latest run: 19 candidates, many novel hits are chatbots, demo
-              frameworks, skill dumps, or star-farm noise (MetaGPT, nanobot,
-              hyperframes, cyber-skills packs). Heuristics
-              (agent|orchestr|mcp|…) will miss paradigm shifts that use
-              different vocabulary, and will keep surfacing popular irrelevancies.
-            </Text>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardHeader
-            trailing={<Pill tone="warning" size="small">Process</Pill>}
-          >
-            Freshness depends on three living systems
-          </CardHeader>
-          <CardBody>
-            <Text>
-              GitHub Actions, Cursor Cloud Automation, and Orbit Slack Approve
-              must all keep working. If Automation stops, CI still opens
-              discovery PRs — but the card HTML stops evolving. If Approves
-              stop, PRs pile up and Pages drifts.
-            </Text>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardHeader
-            trailing={<Pill tone="warning" size="small">Ontology</Pill>}
-          >
-            Watchlist + layers are hand-curated
-          </CardHeader>
-          <CardBody>
-            <Text>
-              New constraint niches (e.g. durable workflows, browser agents,
-              local runtime) require someone to add watchlist entries and
-              possibly invent a new picker constraint or layer. Automation can
-              swap rows; it cannot invent a better map of the field by itself.
-            </Text>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardHeader
-            trailing={<Pill tone="neutral" size="small">Evidence</Pill>}
-          >
-            Loop already works once — under judgment
-          </CardHeader>
-          <CardBody>
-            <Text>
-              W31: discovery flagged Google ADK as a high-priority gap;
-              judgment added it and deferred Semantic Kernel / Haystack /
-              Mastra / novel noise. That is the intended behavior — product
-              freshness with conceptual restraint — not autonomous year-scale
-              authorship.
-            </Text>
-          </CardBody>
-        </Card>
-      </Stack>
-
-      <H2>Horizon scorecard</H2>
-      <Table
-        headers={["Horizon", "Likely outcome", "Condition"]}
-        rows={[
-          [
-            "Next 12–24 months",
-            "Picker, docs URLs, and examples stay credible",
-            "Friday Automation + weekly Approve continue",
-          ],
-          [
-            "Years 2–4",
-            "Core layers may still hold; search queries & watchlist need redesign",
-            "Quarterly human ontology pass",
-          ],
-          [
-            "Year 5+",
-            "Card may describe yesterday’s map unless redesigned",
-            "New jobs (beyond RAG/agent/tools/peers/behavior) force a rewrite",
+            "Year 4+",
+            "Ontology likely stale",
+            "Same ceiling — process helps, does not invent new jobs",
+            "Willing redesign when layers stop matching the field",
           ],
         ]}
         rowTone={["success", "warning", "danger"]}
       />
 
-      <H2>What would make “years to come” realistic</H2>
-      <Stack gap={8}>
-        <Row gap={8} align="center">
-          <Pill tone="info" size="small">1</Pill>
-          <Text>
-            Quarterly ontology review: are the layers and constraints still the
-            right jobs?
-          </Text>
-        </Row>
-        <Row gap={8} align="center">
-          <Pill tone="info" size="small">2</Pill>
-          <Text>
-            Harden discovery: tighter relevance filters, demote star-only
-            novelty, track sources beyond GitHub (papers, vendor blogs,
-            standards bodies).
-          </Text>
-        </Row>
-        <Row gap={8} align="center">
-          <Pill tone="info" size="small">3</Pill>
-          <Text>
-            Health check for the Automation itself (alert if no judgment Summary
-            lands within N days of the Friday discovery PR).
-          </Text>
-        </Row>
-        <Row gap={8} align="center">
-          <Pill tone="info" size="small">4</Pill>
-          <Text>
-            Keep the human gate, but treat skipped weeks as a freshness SLA
-            breach — not silent success.
-          </Text>
-        </Row>
+      <H2>Remaining risks (unchanged or only partly fixed)</H2>
+      <Stack gap={12}>
+        <Card>
+          <CardHeader
+            trailing={<Pill tone="warning" size="small">Open</Pill>}
+          >
+            Triple dependency: Actions + Cursor Automation + Approve
+          </CardHeader>
+          <CardBody>
+            <Text>
+              SLA detects a missing Decision; it does not replace Automation or
+              force Slack Approves. A skipped Approve week still leaves Pages on
+              the last merged card.
+            </Text>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader
+            trailing={<Pill tone="warning" size="small">Open</Pill>}
+          >
+            Discovery is still GitHub-centric
+          </CardHeader>
+          <CardBody>
+            <Text>
+              Standards bodies, vendor blogs, and closed ecosystems can move the
+              field without starring a repo. Quarterly review is the backstop;
+              non-GitHub signals are still Later in the backlog.
+            </Text>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader
+            trailing={<Pill tone="neutral" size="small">Process</Pill>}
+          >
+            Quarterly ontology is documented, not enforced
+          </CardHeader>
+          <CardBody>
+            <Text>
+              Unlike Saturday CI, nothing opens an issue if you skip a quarter.
+              Longevity past ~3 years tracks whether you treat durability.md as
+              real work.
+            </Text>
+          </CardBody>
+        </Card>
       </Stack>
+
+      <H2>Score delta</H2>
+      <Grid columns={2} gap={12}>
+        <Card>
+          <CardHeader>First evaluation</CardHeader>
+          <CardBody>
+            <Stack gap={6}>
+              <Text>Churn: 1–2 years if loop alive</Text>
+              <Text>Noise: high</Text>
+              <Text>Silent Automation failure: yes</Text>
+              <Text>Ontology process: none</Text>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>After 8fd706c</CardHeader>
+          <CardBody>
+            <Stack gap={6}>
+              <Text style={{ color: theme.accent.primary }}>
+                Churn: 1–3 years with cleaner signal
+              </Text>
+              <Text style={{ color: theme.accent.primary }}>
+                Noise: moderate
+              </Text>
+              <Text style={{ color: theme.accent.primary }}>
+                Silent Automation failure: detected
+              </Text>
+              <Text style={{ color: theme.accent.primary }}>
+                Ontology process: documented quarterly
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
+      </Grid>
 
       <Divider />
 
       <H3>Bottom line</H3>
       <Text>
-        This is a well-designed{" "}
+        The project is now a{" "}
         <span style={{ color: theme.accent.primary, fontWeight: 600 }}>
-          maintenance system for a curated one-pager
+          maintained instrument with failure detection
         </span>
-        , not an autonomous encyclopedia of the field. It will keep the card
-        honest on tools and links for the near future. It will not, by itself,
-        guarantee conceptual currency for “years to come” without periodic
-        human redesign of what the card is allowed to say.
+        , not just a hopeful weekly script. That is a real longevity upgrade for
+        tools and links. Multi-year conceptual currency still rides on human
+        quarterly judgment — by design — and that is the right tradeoff for a
+        one-pager.
       </Text>
+
+      <Row gap={8} wrap>
+        <Pill tone="info" size="small">
+          Next: re-bind Friday Automation to new path
+        </Pill>
+        <Pill tone="neutral" size="small">
+          Next: schedule first quarterly ontology
+        </Pill>
+      </Row>
     </Stack>
   );
 }

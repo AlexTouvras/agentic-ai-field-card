@@ -114,13 +114,17 @@ jobs:
             echo
             echo "Full report: \`data/discovery-report.md\`"
             echo
-            echo "### Next: Cursor Automation → Slack Approve"
-            echo "1. Friday Cursor Automation updates \`index.html\` on this branch"
-            echo "2. It runs \`Notify Slack approve\` → **#orbit** gets Approve / Skip (Orbit confirm page, same as weekly Writes)"
-            echo "3. Approve squash-merges; Skip closes the PR"
+            echo "### Status: waiting for Cursor judgment"
+            echo "This PR is **discovery only** (candidates + link check + stamp)."
+            echo "Do **not** Slack-Approve yet. Friday Cursor Automation must:"
+            echo "1. Decide update vs no HTML change"
+            echo "2. Edit \`index.html\` only when earned"
+            echo "3. Write \`## Summary\` on this PR"
+            echo "4. Run \`Notify Slack approve\` → **#orbit** gets preview + Approve / Skip"
             echo
             echo "### Before merge"
-            echo "- [ ] Cursor Automation (or human) applied judgment from discovery"
+            echo "- [ ] Cursor Automation applied judgment (\`## Summary\` present)"
+            echo "- [ ] Slack **Open card preview** reviewed"
             echo "- [ ] Slack Approve used (do not merge from the agent chat)"
             echo "- [ ] Decision table unchanged unless a new *job* appeared"
           } > "$BODY_FILE"

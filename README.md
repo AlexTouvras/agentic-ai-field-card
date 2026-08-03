@@ -19,9 +19,9 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 | Piece | What it does |
 |---|---|
-| **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools (GitHub search + watchlist), checks doc links, bumps the stamp, opens a **PR** — **no vendor LLM API keys** |
-| **Friday Cursor Automation (17:00 local)** | Reviews discovery, updates `index.html`, re-checks links, pushes to the weekly PR, triggers Slack notify |
-| **Slack #orbit Approve** | Incoming webhook + signed Approve/Skip links on alextouvras.com (same gate as weekly Writes). Approve squash-merges the PR; Skip closes it |
+| **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools, checks doc links, bumps stamp, opens a **discovery PR** — **no vendor LLM**, no Slack Approve yet |
+| **Friday Cursor Automation (17:00 local)** | Judges update vs no-change, edits `index.html` when earned, writes `## Summary`, triggers Slack notify |
+| **Slack #orbit Approve** | Preview of proposed HTML + signed Approve/Skip (Orbit confirm page). Approve squash-merges; Skip closes |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
 CI uses only `GITHUB_TOKEN` for discovery. Judgment runs in Cursor Cloud Automation. Approve is **not** auto-merge from the agent — you confirm in Slack (confirm page first, like essays).

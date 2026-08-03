@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "check:links": "node scripts/check-links.mjs",
+    "check:judgment": "node scripts/check-judgment.mjs",
     "bump:version": "node scripts/bump-version.mjs",
     "discover": "node scripts/discover.mjs",
     "notify:slack": "node scripts/notify-slack.mjs",

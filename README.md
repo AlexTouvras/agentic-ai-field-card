@@ -20,9 +20,12 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 | Piece | What it does |
 |---|---|
 | **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools, checks doc links, bumps stamp, opens a **discovery PR** — **no vendor LLM**, no Slack Approve yet |
-| **Friday Cursor Automation (17:00 local)** | Judges update vs no-change, edits `index.html` when earned, writes `## Summary`, triggers Slack notify |
+| **Friday Cursor Automation (17:00 local)** | Judges update vs no-change, edits `index.html` when earned, writes `Decision:` + `## Summary`, triggers Slack notify |
+| **Saturday health check (08:00 UTC)** | Opens `field-card-judgment` issue if the weekly PR still lacks a `Decision:` line |
 | **Slack #orbit Approve** | Preview of proposed HTML + signed Approve/Skip (Orbit confirm page). Approve squash-merges; Skip closes |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
+
+Long-horizon process (quarterly ontology, what not to automate): [`docs/durability.md`](./docs/durability.md).
 
 CI uses only `GITHUB_TOKEN` for discovery. Judgment runs in Cursor Cloud Automation. Approve is **not** auto-merge from the agent — you confirm in Slack (confirm page first, like essays).
 

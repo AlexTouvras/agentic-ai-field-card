@@ -138,23 +138,71 @@ for (const query of watchlist.searchQueries || []) {
   }
 }
 
+/** Soft signals that a repo is a delivery framework / protocol SDK — not a chatbot demo. */
+const FRAMEWORKISH =
+  /\b(sdk|framework|orchestr|langgraph|crewai|autogen|agent[- ]?framework|workflow|durable|multi-?agent|pydantic|semantic[- ]?kernel|haystack|mastra|adk|a2a|mcp)\b/i;
+
+/** Chat apps, skill dumps, courses, awesome-lists — drown the one-pager signal. */
+const NOISE =
+  /whatsapp|telegram|discord|wechat|\bim\b|openclaw|nanoclaw|chat\s*bot|chatbot|phone agent|cybersecurity.?skill|awesome[- ]?(list|agent)|curriculum|course|tutorial|skill.?pack|skills for |browser extension only/i;
+
+const noiseFromWatchlist = (watchlist.noisePatterns || []).map((p) => {
+  try {
+    return new RegExp(p, "i");
+  } catch {
+    return null;
+  }
+}).filter(Boolean);
+
+function hitBlob(hit) {
+  return `${hit.name} ${hit.description || ""} ${(hit.topics || []).join(" ")}`.toLowerCase();
+}
+
+function isNoise(blob) {
+  if (NOISE.test(blob)) return true;
+  return noiseFromWatchlist.some((re) => re.test(blob));
+}
+
+function scoreNovel(hit) {
+  const blob = hitBlob(hit);
+  let score = Math.log10((hit.stars || 1) + 1) * 10;
+  if (hit.homepage) score += 15;
+  if (FRAMEWORKISH.test(blob)) score += 25;
+  if (/\b(mcp|a2a|protocol)\b/i.test(blob)) score += 10;
+  if (isNoise(blob)) score -= 60;
+  if (!hit.homepage) score -= 10;
+  // Prefer recently pushed libraries over abandoned star magnets
+  if (hit.daysSincePush != null && hit.daysSincePush <= 30) score += 8;
+  if (hit.daysSincePush != null && hit.daysSincePush > 180) score -= 15;
+  return score;
+}
+
 const flatSearch = searchHits.flatMap((s) => s.items || []);
 const novelFromSearch = [];
+const rejectedNoise = [];
 const seen = new Set();
 for (const hit of flatSearch) {
   const key = hit.fullName.toLowerCase();
   if (seen.has(key) || known.has(key)) continue;
   seen.add(key);
-  // Heuristic: agent/orchestrat/mcp-ish and reasonably popular or recently active
-  const blob = `${hit.name} ${hit.description || ""} ${(hit.topics || []).join(" ")}`.toLowerCase();
+  const blob = hitBlob(hit);
   const relevant =
-    /agent|orchestr|multi-?agent|langgraph|crewai|autogen|mcp|a2a|workflow/.test(blob);
+    /agent|orchestr|multi-?agent|langgraph|crewai|autogen|mcp|a2a|workflow|sdk/.test(blob);
   if (!relevant) continue;
   if ((hit.stars || 0) < 200 && (hit.daysSincePush == null || hit.daysSincePush > 60)) continue;
-  novelFromSearch.push(hit);
+  if (isNoise(blob) && !FRAMEWORKISH.test(blob)) {
+    rejectedNoise.push({ fullName: hit.fullName, stars: hit.stars, reason: "noise-heuristic" });
+    continue;
+  }
+  // Prefer candidates with a homepage/docs pointer — one-pager cannot invent URLs
+  if (!hit.homepage && (hit.stars || 0) < 1500) {
+    rejectedNoise.push({ fullName: hit.fullName, stars: hit.stars, reason: "no-homepage-low-stars" });
+    continue;
+  }
+  novelFromSearch.push({ ...hit, discoveryScore: scoreNovel(hit) });
 }
 
-novelFromSearch.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+novelFromSearch.sort((a, b) => (b.discoveryScore || 0) - (a.discoveryScore || 0));
 
 const notOnCard = watchlistStatus.filter((w) => !w.onCardDetected);
 const freshReleases = watchlistStatus.filter(
@@ -172,16 +220,25 @@ const candidates = [
     constraint: w.constraint,
     priority: w.signal?.stars >= 5000 ? "high" : w.signal?.stars >= 1000 ? "medium" : "low",
   })),
-  ...novelFromSearch.slice(0, 12).map((h) => ({
-    kind: "github-search-novel",
-    name: h.name,
-    reason: h.description || "Matched agent/orchestration search query",
-    stars: h.stars,
-    docs: h.homepage ? [h.homepage] : [],
-    repos: [h.fullName],
-    htmlUrl: h.htmlUrl,
-    priority: h.stars >= 3000 ? "high" : h.stars >= 800 ? "medium" : "low",
-  })),
+  ...novelFromSearch
+    .filter((h) => (h.discoveryScore || 0) >= 20)
+    .slice(0, 8)
+    .map((h) => ({
+      kind: "github-search-novel",
+      name: h.name,
+      reason: h.description || "Matched agent/orchestration search query",
+      stars: h.stars,
+      docs: h.homepage ? [h.homepage] : [],
+      repos: [h.fullName],
+      htmlUrl: h.htmlUrl,
+      discoveryScore: h.discoveryScore,
+      priority:
+        (h.discoveryScore || 0) >= 45
+          ? "high"
+          : (h.discoveryScore || 0) >= 30
+            ? "medium"
+            : "low",
+    })),
 ];
 
 const report = {
@@ -191,9 +248,11 @@ const report = {
     notOnCard: notOnCard.length,
     freshReleases: freshReleases.length,
     novelSearchHits: novelFromSearch.length,
+    rejectedNoise: rejectedNoise.length,
     candidateCount: candidates.length,
   },
   candidates,
+  rejectedNoise: rejectedNoise.slice(0, 20),
   freshReleases: freshReleases.map((w) => ({
     name: w.name,
     onCard: w.onCardDetected,
@@ -222,7 +281,8 @@ md.push("");
 md.push(`- Candidates: **${report.summary.candidateCount}**`);
 md.push(`- Watchlist items not on card: **${report.summary.notOnCard}**`);
 md.push(`- Fresh releases (≤21 days): **${report.summary.freshReleases}**`);
-md.push(`- Novel GitHub search hits: **${report.summary.novelSearchHits}**`);
+md.push(`- Novel GitHub search hits (after score filter): **${report.summary.novelSearchHits}**`);
+md.push(`- Rejected as noise / weak docs: **${report.summary.rejectedNoise}**`);
 md.push("");
 md.push(`## Candidates (review before adding to the card)`);
 md.push("");

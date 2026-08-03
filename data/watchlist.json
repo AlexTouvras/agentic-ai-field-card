@@ -119,15 +119,42 @@
     }
   ],
   "searchQueries": [
-    "AI agent framework stars:>500",
-    "multi-agent orchestration library stars:>300",
-    "\"agent sdk\" stars:>200",
-    "Model Context Protocol server stars:>200"
+    "AI agent framework language:Python stars:>800",
+    "AI agent framework language:TypeScript stars:>800",
+    "multi-agent orchestration library stars:>500",
+    "\"agents sdk\" OR \"agent sdk\" stars:>400",
+    "Model Context Protocol SDK stars:>300",
+    "\"agent-to-agent\" OR \"A2A protocol\" stars:>200"
+  ],
+  "noisePatterns": [
+    "whatsapp|telegram|discord bot",
+    "openclaw|nanoclaw",
+    "cybersecurity.?skill",
+    "awesome[- ]list",
+    "phone agent"
   ],
   "ignoreRepos": [
     "langchain-ai/langchain",
     "langchain-ai/langchainjs",
     "obra/superpowers",
-    "microsoft/autogen"
+    "microsoft/autogen",
+    "FoundationAgents/MetaGPT",
+    "HKUDS/nanobot",
+    "heygen-com/hyperframes",
+    "AstrBotDevs/AstrBot",
+    "nanocoai/nanoclaw",
+    "mukul975/Anthropic-Cybersecurity-Skills",
+    "zai-org/Open-AutoGLM",
+    "humanlayer/12-factor-agents",
+    "modelcontextprotocol/python-sdk",
+    "modelcontextprotocol/typescript-sdk",
+    "modelcontextprotocol/go-sdk",
+    "modelcontextprotocol/csharp-sdk",
+    "modelcontextprotocol/rust-sdk",
+    "modelcontextprotocol/java-sdk",
+    "modelcontextprotocol/kotlin-sdk",
+    "modelcontextprotocol/ruby-sdk",
+    "modelcontextprotocol/swift-sdk",
+    "modelcontextprotocol/php-sdk"
   ]
 }

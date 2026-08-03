@@ -1,0 +1,35 @@
+name: Judgment health check
+
+# Saturday morning: Friday discovery PRs must have Cursor Decision by then.
+# Opens a field-card-judgment issue if the human/automation gate went silent.
+
+on:
+  schedule:
+    # Saturday 08:00 UTC — after Friday 12:00 discovery + 17:00 local Automation
+    - cron: "0 8 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Ensure judgment label
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create field-card-judgment --color B60205 --description "Weekly discovery PR missing Cursor Decision" 2>/dev/null || true
+      - name: Check weekly PR has Decision
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          JUDGMENT_GRACE_HOURS: "20"
+        run: node scripts/check-judgment.mjs

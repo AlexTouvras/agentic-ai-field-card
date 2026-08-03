@@ -12,6 +12,10 @@ Discovery alone is not enough. Every run must end with an explicit **update** or
    - **Update card** if a picker swap, docs URL fix, or new *job* in the decision table is earned.
    - **No HTML change** if candidates are noise, picker is full with better incumbents, or nothing new belongs on a one-pager.
    - Write the decision in the PR `## Summary` either way. Never skip this step.
+   - **Machine line (required for health check):** first bullet or its own line under Summary must be exactly one of:
+     - `Decision: update`
+     - `Decision: no-change`
+     Saturday CI opens a `field-card-judgment` issue if this line is missing after the grace window.
 4. If updating `index.html`:
    - Framework picker ≤ 7 rows; swap by constraint (control, speed, data, enterprise, handoffs, typed, google, …) — not hype or star count alone.
    - Do not invent docs URLs; use discovery report, watchlist, or existing card links.
@@ -24,7 +28,7 @@ Discovery alone is not enough. Every run must end with an explicit **update** or
 7. Update `data/watchlist.json` for tools you confirm for ongoing tracking (`onCard` true/false).
 8. Commit and push to the weekly PR. Do not merge. Do not force-push `main`.
 9. Rewrite the PR body to include at least:
-   - `## Summary` — 3–6 bullets: what changed on the card **or** why nothing changed; what was deferred.
+   - `## Summary` — start with `Decision: update` or `Decision: no-change`, then 3–6 bullets: what changed on the card **or** why nothing changed; what was deferred.
    - `## Card preview` — one line: Slack will open the proposed `index.html` via Orbit before Approve.
 10. Notify #orbit **only after** the judgment commit + Summary exist:
     ```bash

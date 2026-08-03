@@ -56,7 +56,7 @@
       "name": "Google ADK",
       "repos": ["google/adk-python"],
       "docs": ["https://google.github.io/adk-docs/"],
-      "onCard": false,
+      "onCard": true,
       "constraint": "google"
     },
     {

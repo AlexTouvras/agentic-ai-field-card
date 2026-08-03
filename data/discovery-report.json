@@ -1,10 +1,10 @@
 {
-  "discoveredAt": "2026-07-30T12:37:37.822Z",
+  "discoveredAt": "2026-08-03T14:45:53.840Z",
   "summary": {
     "watchlistItems": 16,
     "notOnCard": 7,
-    "freshReleases": 12,
-    "novelSearchHits": 36,
+    "freshReleases": 11,
+    "novelSearchHits": 35,
     "candidateCount": 19
   },
   "candidates": [
@@ -12,7 +12,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Google ADK",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 20947,
+      "stars": 20986,
       "docs": [
         "https://google.github.io/adk-docs/"
       ],
@@ -26,7 +26,7 @@
       "kind": "watchlist-not-on-card",
       "name": "AG2",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 4817,
+      "stars": 4830,
       "docs": [
         "https://docs.ag2.ai/"
       ],
@@ -40,7 +40,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Semantic Kernel",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 28392,
+      "stars": 28410,
       "docs": [
         "https://learn.microsoft.com/en-us/semantic-kernel/"
       ],
@@ -54,7 +54,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Haystack",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 26067,
+      "stars": 26099,
       "docs": [
         "https://docs.haystack.deepset.ai/"
       ],
@@ -68,7 +68,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Mastra",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 26732,
+      "stars": 26861,
       "docs": [
         "https://mastra.ai/docs"
       ],
@@ -82,7 +82,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Vercel AI SDK",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 25907,
+      "stars": 25986,
       "docs": [
         "https://sdk.vercel.ai/docs"
       ],
@@ -96,7 +96,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Dapr Agents",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 728,
+      "stars": 732,
       "docs": [
         "https://docs.dapr.io/developing-ai/dapr-agents/"
       ],
@@ -108,35 +108,9 @@
     },
     {
       "kind": "github-search-novel",
-      "name": "superpowers",
-      "reason": "An agentic skills framework & software development methodology that works.",
-      "stars": 263723,
-      "docs": [],
-      "repos": [
-        "obra/superpowers"
-      ],
-      "htmlUrl": "https://github.com/obra/superpowers",
-      "priority": "high"
-    },
-    {
-      "kind": "github-search-novel",
-      "name": "langchain",
-      "reason": "The agent engineering platform.",
-      "stars": 142989,
-      "docs": [
-        "https://docs.langchain.com/langchain/"
-      ],
-      "repos": [
-        "langchain-ai/langchain"
-      ],
-      "htmlUrl": "https://github.com/langchain-ai/langchain",
-      "priority": "high"
-    },
-    {
-      "kind": "github-search-novel",
       "name": "MetaGPT",
       "reason": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 69597,
+      "stars": 69647,
       "docs": [
         "https://atoms.dev/"
       ],
@@ -148,23 +122,9 @@
     },
     {
       "kind": "github-search-novel",
-      "name": "autogen",
-      "reason": "A programming framework for agentic AI",
-      "stars": 60104,
-      "docs": [
-        "https://microsoft.github.io/autogen/"
-      ],
-      "repos": [
-        "microsoft/autogen"
-      ],
-      "htmlUrl": "https://github.com/microsoft/autogen",
-      "priority": "high"
-    },
-    {
-      "kind": "github-search-novel",
       "name": "nanobot",
       "reason": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
-      "stars": 46413,
+      "stars": 46562,
       "docs": [
         "https://nanobot.wiki"
       ],
@@ -178,7 +138,7 @@
       "kind": "github-search-novel",
       "name": "hyperframes",
       "reason": "Write HTML. Render video. Built for agents.",
-      "stars": 38754,
+      "stars": 39297,
       "docs": [],
       "repos": [
         "heygen-com/hyperframes"
@@ -190,7 +150,7 @@
       "kind": "github-search-novel",
       "name": "AstrBot",
       "reason": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "stars": 38342,
+      "stars": 38519,
       "docs": [
         "https://astrbot.app"
       ],
@@ -204,7 +164,7 @@
       "kind": "github-search-novel",
       "name": "nanoclaw",
       "reason": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
-      "stars": 30394,
+      "stars": 30415,
       "docs": [
         "https://nanoclaw.dev"
       ],
@@ -218,7 +178,7 @@
       "kind": "github-search-novel",
       "name": "Anthropic-Cybersecurity-Skills",
       "reason": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
-      "stars": 26938,
+      "stars": 27209,
       "docs": [
         "https://mahipal.engineer/Anthropic-Cybersecurity-Skills/"
       ],
@@ -232,7 +192,7 @@
       "kind": "github-search-novel",
       "name": "Open-AutoGLM",
       "reason": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
-      "stars": 25914,
+      "stars": 25943,
       "docs": [
         "https://autoglm.z.ai/blog"
       ],
@@ -246,7 +206,7 @@
       "kind": "github-search-novel",
       "name": "12-factor-agents",
       "reason": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
-      "stars": 24970,
+      "stars": 25053,
       "docs": [],
       "repos": [
         "humanlayer/12-factor-agents"
@@ -256,14 +216,56 @@
     },
     {
       "kind": "github-search-novel",
+      "name": "python-sdk",
+      "reason": "The official Python SDK for Model Context Protocol servers and clients",
+      "stars": 23862,
+      "docs": [
+        "https://py.sdk.modelcontextprotocol.io/"
+      ],
+      "repos": [
+        "modelcontextprotocol/python-sdk"
+      ],
+      "htmlUrl": "https://github.com/modelcontextprotocol/python-sdk",
+      "priority": "high"
+    },
+    {
+      "kind": "github-search-novel",
+      "name": "typescript-sdk",
+      "reason": "The official TypeScript SDK for Model Context Protocol servers and clients",
+      "stars": 13050,
+      "docs": [
+        "https://ts.sdk.modelcontextprotocol.io/v2"
+      ],
+      "repos": [
+        "modelcontextprotocol/typescript-sdk"
+      ],
+      "htmlUrl": "https://github.com/modelcontextprotocol/typescript-sdk",
+      "priority": "high"
+    },
+    {
+      "kind": "github-search-novel",
       "name": "mcp-chrome",
       "reason": "Chrome MCP Server is a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.",
-      "stars": 12237,
+      "stars": 12249,
       "docs": [],
       "repos": [
         "hangwin/mcp-chrome"
       ],
       "htmlUrl": "https://github.com/hangwin/mcp-chrome",
+      "priority": "high"
+    },
+    {
+      "kind": "github-search-novel",
+      "name": "registry",
+      "reason": "A community driven registry service for Model Context Protocol (MCP) servers.",
+      "stars": 7100,
+      "docs": [
+        "https://github.com/modelcontextprotocol/registry/tree/main/docs"
+      ],
+      "repos": [
+        "modelcontextprotocol/registry"
+      ],
+      "htmlUrl": "https://github.com/modelcontextprotocol/registry",
       "priority": "high"
     }
   ],
@@ -272,41 +274,41 @@
       "name": "LangGraph",
       "onCard": true,
       "release": {
-        "tag": "1.2.10",
-        "publishedAt": "2026-07-28T18:34:14Z",
-        "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.10"
+        "tag": "checkpointsqlite==3.1.1",
+        "publishedAt": "2026-07-30T19:19:47Z",
+        "url": "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.1"
       },
-      "daysSinceRelease": 1
+      "daysSinceRelease": 3
     },
     {
       "name": "CrewAI",
       "onCard": true,
       "release": {
-        "tag": "1.15.9",
-        "publishedAt": "2026-07-30T05:45:26Z",
-        "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.9"
+        "tag": "1.15.10",
+        "publishedAt": "2026-07-31T14:57:37Z",
+        "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.10"
       },
-      "daysSinceRelease": 0
+      "daysSinceRelease": 2
     },
     {
       "name": "Microsoft Agent Framework",
       "onCard": true,
       "release": {
-        "tag": "python-github-copilot-1.0.0",
-        "publishedAt": "2026-07-23T21:32:23Z",
-        "url": "https://github.com/microsoft/agent-framework/releases/tag/python-github-copilot-1.0.0"
+        "tag": "python-1.13.0",
+        "publishedAt": "2026-07-30T23:22:33Z",
+        "url": "https://github.com/microsoft/agent-framework/releases/tag/python-1.13.0"
       },
-      "daysSinceRelease": 6
+      "daysSinceRelease": 3
     },
     {
       "name": "OpenAI Agents SDK",
       "onCard": true,
       "release": {
-        "tag": "v0.19.1",
-        "publishedAt": "2026-07-29T07:44:24Z",
-        "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.1"
+        "tag": "v0.19.2",
+        "publishedAt": "2026-08-01T01:08:37Z",
+        "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.2"
       },
-      "daysSinceRelease": 1
+      "daysSinceRelease": 2
     },
     {
       "name": "Claude Agent SDK",
@@ -316,27 +318,27 @@
         "publishedAt": "2026-07-25T01:49:41Z",
         "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.128"
       },
-      "daysSinceRelease": 5
+      "daysSinceRelease": 9
     },
     {
       "name": "Pydantic AI",
       "onCard": true,
       "release": {
-        "tag": "v2.21.0",
-        "publishedAt": "2026-07-30T01:59:06Z",
-        "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.21.0"
+        "tag": "v2.22.0",
+        "publishedAt": "2026-08-01T02:27:46Z",
+        "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.22.0"
       },
-      "daysSinceRelease": 0
+      "daysSinceRelease": 2
     },
     {
       "name": "Google ADK",
       "onCard": false,
       "release": {
-        "tag": "v2.5.0",
-        "publishedAt": "2026-07-16T20:41:30Z",
-        "url": "https://github.com/google/adk-python/releases/tag/v2.5.0"
+        "tag": "v2.6.1",
+        "publishedAt": "2026-07-31T21:14:57Z",
+        "url": "https://github.com/google/adk-python/releases/tag/v2.6.1"
       },
-      "daysSinceRelease": 13
+      "daysSinceRelease": 2
     },
     {
       "name": "AG2",
@@ -346,7 +348,7 @@
         "publishedAt": "2026-07-29T05:09:51Z",
         "url": "https://github.com/ag2ai/ag2/releases/tag/v1.0.1"
       },
-      "daysSinceRelease": 1
+      "daysSinceRelease": 5
     },
     {
       "name": "Haystack",
@@ -356,37 +358,27 @@
         "publishedAt": "2026-07-20T12:07:08Z",
         "url": "https://github.com/deepset-ai/haystack/releases/tag/v3.0.0"
       },
-      "daysSinceRelease": 10
+      "daysSinceRelease": 14
     },
     {
       "name": "Mastra",
       "onCard": false,
       "release": {
-        "tag": "@mastra/core@1.54.0",
-        "publishedAt": "2026-07-30T11:54:39Z",
-        "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.54.0"
+        "tag": "@mastra/core@1.55.0",
+        "publishedAt": "2026-07-31T12:00:56Z",
+        "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.55.0"
       },
-      "daysSinceRelease": 0
+      "daysSinceRelease": 3
     },
     {
       "name": "Vercel AI SDK",
       "onCard": false,
       "release": {
-        "tag": "@ai-sdk/minimax@2.0.0",
-        "publishedAt": "2026-07-29T22:25:54Z",
-        "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/minimax%402.0.0"
+        "tag": "@ai-sdk/fireworks@1.0.51",
+        "publishedAt": "2026-08-02T19:04:45Z",
+        "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/fireworks%401.0.51"
       },
       "daysSinceRelease": 0
-    },
-    {
-      "name": "MCP",
-      "onCard": true,
-      "release": {
-        "tag": "2026.7.10",
-        "publishedAt": "2026-07-10T03:39:07Z",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.7.10"
-      },
-      "daysSinceRelease": 20
     }
   ],
   "watchlistStatus": [
@@ -401,9 +393,9 @@
       "repos": [
         {
           "fullName": "langchain-ai/langgraph",
-          "stars": 38501,
-          "forks": 6482,
-          "pushedAt": "2026-07-28T18:34:13Z",
+          "stars": 38764,
+          "forks": 6533,
+          "pushedAt": "2026-08-02T00:51:22Z",
           "description": "Build resilient agents.",
           "homepage": "https://docs.langchain.com/oss/python/langgraph/",
           "topics": [
@@ -428,22 +420,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "1.2.10",
-            "publishedAt": "2026-07-28T18:34:14Z",
-            "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.10"
+            "tag": "checkpointsqlite==3.1.1",
+            "publishedAt": "2026-07-30T19:19:47Z",
+            "url": "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.1"
           },
           "daysSincePush": 1,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 3
         }
       ],
       "signal": {
-        "stars": 38501,
+        "stars": 38764,
         "daysSincePush": 1,
-        "daysSinceRelease": 1,
+        "daysSinceRelease": 3,
         "latestRelease": {
-          "tag": "1.2.10",
-          "publishedAt": "2026-07-28T18:34:14Z",
-          "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.10"
+          "tag": "checkpointsqlite==3.1.1",
+          "publishedAt": "2026-07-30T19:19:47Z",
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.1"
         }
       }
     },
@@ -458,9 +450,9 @@
       "repos": [
         {
           "fullName": "crewAIInc/crewAI",
-          "stars": 56380,
-          "forks": 8016,
-          "pushedAt": "2026-07-30T07:41:52Z",
+          "stars": 56569,
+          "forks": 8050,
+          "pushedAt": "2026-08-03T11:31:38Z",
           "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
           "homepage": "https://crewai.com",
           "topics": [
@@ -472,22 +464,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "1.15.9",
-            "publishedAt": "2026-07-30T05:45:26Z",
-            "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.9"
+            "tag": "1.15.10",
+            "publishedAt": "2026-07-31T14:57:37Z",
+            "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.10"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 0
+          "daysSinceRelease": 2
         }
       ],
       "signal": {
-        "stars": 56380,
+        "stars": 56569,
         "daysSincePush": 0,
-        "daysSinceRelease": 0,
+        "daysSinceRelease": 2,
         "latestRelease": {
-          "tag": "1.15.9",
-          "publishedAt": "2026-07-30T05:45:26Z",
-          "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.9"
+          "tag": "1.15.10",
+          "publishedAt": "2026-07-31T14:57:37Z",
+          "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.10"
         }
       }
     },
@@ -502,9 +494,9 @@
       "repos": [
         {
           "fullName": "run-llama/llama_index",
-          "stars": 51226,
-          "forks": 7836,
-          "pushedAt": "2026-07-28T21:22:58Z",
+          "stars": 51340,
+          "forks": 7863,
+          "pushedAt": "2026-08-01T08:59:09Z",
           "description": "LlamaIndex is the leading document agent and OCR platform",
           "homepage": "https://developers.llamaindex.ai",
           "topics": [
@@ -525,14 +517,14 @@
             "publishedAt": "2026-06-24T19:36:43Z",
             "url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.23"
           },
-          "daysSincePush": 1,
-          "daysSinceRelease": 35
+          "daysSincePush": 2,
+          "daysSinceRelease": 39
         }
       ],
       "signal": {
-        "stars": 51226,
-        "daysSincePush": 1,
-        "daysSinceRelease": 35,
+        "stars": 51340,
+        "daysSincePush": 2,
+        "daysSinceRelease": 39,
         "latestRelease": {
           "tag": "v0.14.23",
           "publishedAt": "2026-06-24T19:36:43Z",
@@ -551,9 +543,9 @@
       "repos": [
         {
           "fullName": "microsoft/agent-framework",
-          "stars": 12504,
-          "forks": 2096,
-          "pushedAt": "2026-07-30T10:51:43Z",
+          "stars": 12568,
+          "forks": 2108,
+          "pushedAt": "2026-08-03T06:32:48Z",
           "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
           "homepage": "https://aka.ms/agent-framework",
           "topics": [
@@ -570,22 +562,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "python-github-copilot-1.0.0",
-            "publishedAt": "2026-07-23T21:32:23Z",
-            "url": "https://github.com/microsoft/agent-framework/releases/tag/python-github-copilot-1.0.0"
+            "tag": "python-1.13.0",
+            "publishedAt": "2026-07-30T23:22:33Z",
+            "url": "https://github.com/microsoft/agent-framework/releases/tag/python-1.13.0"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 6
+          "daysSinceRelease": 3
         }
       ],
       "signal": {
-        "stars": 12504,
+        "stars": 12568,
         "daysSincePush": 0,
-        "daysSinceRelease": 6,
+        "daysSinceRelease": 3,
         "latestRelease": {
-          "tag": "python-github-copilot-1.0.0",
-          "publishedAt": "2026-07-23T21:32:23Z",
-          "url": "https://github.com/microsoft/agent-framework/releases/tag/python-github-copilot-1.0.0"
+          "tag": "python-1.13.0",
+          "publishedAt": "2026-07-30T23:22:33Z",
+          "url": "https://github.com/microsoft/agent-framework/releases/tag/python-1.13.0"
         }
       }
     },
@@ -600,9 +592,9 @@
       "repos": [
         {
           "fullName": "openai/openai-agents-python",
-          "stars": 28290,
-          "forks": 4399,
-          "pushedAt": "2026-07-29T23:15:48Z",
+          "stars": 28357,
+          "forks": 4437,
+          "pushedAt": "2026-08-03T13:33:56Z",
           "description": "A lightweight, powerful framework for multi-agent workflows",
           "homepage": "https://openai.github.io/openai-agents-python/",
           "topics": [
@@ -616,22 +608,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "v0.19.1",
-            "publishedAt": "2026-07-29T07:44:24Z",
-            "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.1"
+            "tag": "v0.19.2",
+            "publishedAt": "2026-08-01T01:08:37Z",
+            "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.2"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 2
         }
       ],
       "signal": {
-        "stars": 28290,
+        "stars": 28357,
         "daysSincePush": 0,
-        "daysSinceRelease": 1,
+        "daysSinceRelease": 2,
         "latestRelease": {
-          "tag": "v0.19.1",
-          "publishedAt": "2026-07-29T07:44:24Z",
-          "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.1"
+          "tag": "v0.19.2",
+          "publishedAt": "2026-08-01T01:08:37Z",
+          "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.2"
         }
       }
     },
@@ -646,8 +638,8 @@
       "repos": [
         {
           "fullName": "anthropics/claude-agent-sdk-python",
-          "stars": 7765,
-          "forks": 1192,
+          "stars": 7793,
+          "forks": 1201,
           "pushedAt": "2026-07-25T01:49:40Z",
           "description": null,
           "homepage": null,
@@ -658,13 +650,13 @@
             "publishedAt": "2026-07-25T01:49:41Z",
             "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.128"
           },
-          "daysSincePush": 5,
-          "daysSinceRelease": 5
+          "daysSincePush": 9,
+          "daysSinceRelease": 9
         },
         {
           "fullName": "anthropics/claude-agent-sdk-typescript",
-          "stars": 1666,
-          "forks": 203,
+          "stars": 1672,
+          "forks": 207,
           "pushedAt": "2026-07-25T01:35:41Z",
           "description": null,
           "homepage": null,
@@ -675,14 +667,14 @@
             "publishedAt": "2026-07-25T01:35:41Z",
             "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.220"
           },
-          "daysSincePush": 5,
-          "daysSinceRelease": 5
+          "daysSincePush": 9,
+          "daysSinceRelease": 9
         }
       ],
       "signal": {
-        "stars": 7765,
-        "daysSincePush": 5,
-        "daysSinceRelease": 5,
+        "stars": 7793,
+        "daysSincePush": 9,
+        "daysSinceRelease": 9,
         "latestRelease": {
           "tag": "v0.2.128",
           "publishedAt": "2026-07-25T01:49:41Z",
@@ -701,9 +693,9 @@
       "repos": [
         {
           "fullName": "pydantic/pydantic-ai",
-          "stars": 18901,
-          "forks": 2445,
-          "pushedAt": "2026-07-30T12:33:20Z",
+          "stars": 19027,
+          "forks": 2467,
+          "pushedAt": "2026-08-03T13:45:06Z",
           "description": "AI Agent Framework, the Pydantic way",
           "homepage": "https://pydantic.dev/pydantic-ai",
           "topics": [
@@ -715,22 +707,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "v2.21.0",
-            "publishedAt": "2026-07-30T01:59:06Z",
-            "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.21.0"
+            "tag": "v2.22.0",
+            "publishedAt": "2026-08-01T02:27:46Z",
+            "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.22.0"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 0
+          "daysSinceRelease": 2
         }
       ],
       "signal": {
-        "stars": 18901,
+        "stars": 19027,
         "daysSincePush": 0,
-        "daysSinceRelease": 0,
+        "daysSinceRelease": 2,
         "latestRelease": {
-          "tag": "v2.21.0",
-          "publishedAt": "2026-07-30T01:59:06Z",
-          "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.21.0"
+          "tag": "v2.22.0",
+          "publishedAt": "2026-08-01T02:27:46Z",
+          "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.22.0"
         }
       }
     },
@@ -745,9 +737,9 @@
       "repos": [
         {
           "fullName": "google/adk-python",
-          "stars": 20947,
-          "forks": 3770,
-          "pushedAt": "2026-07-30T10:32:38Z",
+          "stars": 20986,
+          "forks": 3790,
+          "pushedAt": "2026-08-03T13:05:32Z",
           "description": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
           "homepage": "https://google.github.io/adk-docs/",
           "topics": [
@@ -770,22 +762,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "v2.5.0",
-            "publishedAt": "2026-07-16T20:41:30Z",
-            "url": "https://github.com/google/adk-python/releases/tag/v2.5.0"
+            "tag": "v2.6.1",
+            "publishedAt": "2026-07-31T21:14:57Z",
+            "url": "https://github.com/google/adk-python/releases/tag/v2.6.1"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 13
+          "daysSinceRelease": 2
         }
       ],
       "signal": {
-        "stars": 20947,
+        "stars": 20986,
         "daysSincePush": 0,
-        "daysSinceRelease": 13,
+        "daysSinceRelease": 2,
         "latestRelease": {
-          "tag": "v2.5.0",
-          "publishedAt": "2026-07-16T20:41:30Z",
-          "url": "https://github.com/google/adk-python/releases/tag/v2.5.0"
+          "tag": "v2.6.1",
+          "publishedAt": "2026-07-31T21:14:57Z",
+          "url": "https://github.com/google/adk-python/releases/tag/v2.6.1"
         }
       }
     },
@@ -800,9 +792,9 @@
       "repos": [
         {
           "fullName": "ag2ai/ag2",
-          "stars": 4817,
-          "forks": 690,
-          "pushedAt": "2026-07-29T20:01:42Z",
+          "stars": 4830,
+          "forks": 694,
+          "pushedAt": "2026-08-03T09:03:50Z",
           "description": "AG2 (formerly AutoGen): The Open-Source AgentOS.Join us at: https://discord.gg/sNGSwQME3x",
           "homepage": "https://ag2.ai",
           "topics": [
@@ -830,13 +822,13 @@
             "url": "https://github.com/ag2ai/ag2/releases/tag/v1.0.1"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 5
         }
       ],
       "signal": {
-        "stars": 4817,
+        "stars": 4830,
         "daysSincePush": 0,
-        "daysSinceRelease": 1,
+        "daysSinceRelease": 5,
         "latestRelease": {
           "tag": "v1.0.1",
           "publishedAt": "2026-07-29T05:09:51Z",
@@ -855,9 +847,9 @@
       "repos": [
         {
           "fullName": "microsoft/semantic-kernel",
-          "stars": 28392,
-          "forks": 4698,
-          "pushedAt": "2026-07-30T01:41:39Z",
+          "stars": 28410,
+          "forks": 4704,
+          "pushedAt": "2026-07-30T19:22:45Z",
           "description": "Integrate cutting-edge LLM technology quickly and easily into your apps",
           "homepage": "https://aka.ms/semantic-kernel",
           "topics": [
@@ -873,14 +865,14 @@
             "publishedAt": "2026-07-07T15:25:33Z",
             "url": "https://github.com/microsoft/semantic-kernel/releases/tag/dotnet-1.78.0"
           },
-          "daysSincePush": 0,
-          "daysSinceRelease": 22
+          "daysSincePush": 3,
+          "daysSinceRelease": 26
         }
       ],
       "signal": {
-        "stars": 28392,
-        "daysSincePush": 0,
-        "daysSinceRelease": 22,
+        "stars": 28410,
+        "daysSincePush": 3,
+        "daysSinceRelease": 26,
         "latestRelease": {
           "tag": "dotnet-1.78.0",
           "publishedAt": "2026-07-07T15:25:33Z",
@@ -899,32 +891,32 @@
       "repos": [
         {
           "fullName": "deepset-ai/haystack",
-          "stars": 26067,
-          "forks": 2964,
-          "pushedAt": "2026-07-30T12:01:25Z",
+          "stars": 26099,
+          "forks": 2979,
+          "pushedAt": "2026-08-03T14:37:07Z",
           "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
           "homepage": "https://haystack.deepset.ai",
           "topics": [
-            "agent",
+            "agent-framework",
+            "agentic-ai",
+            "agentic-rag",
             "agents",
             "ai",
-            "gemini",
+            "ai-agents",
+            "context-engineering",
+            "framework",
+            "genai",
             "generative-ai",
-            "gpt-4",
             "information-retrieval",
             "large-language-models",
             "llm",
-            "machine-learning",
-            "nlp",
+            "mcp",
+            "multi-agent",
             "orchestration",
             "python",
-            "pytorch",
-            "question-answering",
             "rag",
             "retrieval-augmented-generation",
-            "semantic-search",
-            "summarization",
-            "transformers"
+            "semantic-search"
           ],
           "archived": false,
           "latestRelease": {
@@ -933,13 +925,13 @@
             "url": "https://github.com/deepset-ai/haystack/releases/tag/v3.0.0"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 10
+          "daysSinceRelease": 14
         }
       ],
       "signal": {
-        "stars": 26067,
+        "stars": 26099,
         "daysSincePush": 0,
-        "daysSinceRelease": 10,
+        "daysSinceRelease": 14,
         "latestRelease": {
           "tag": "v3.0.0",
           "publishedAt": "2026-07-20T12:07:08Z",
@@ -958,9 +950,9 @@
       "repos": [
         {
           "fullName": "mastra-ai/mastra",
-          "stars": 26732,
-          "forks": 2536,
-          "pushedAt": "2026-07-30T12:33:57Z",
+          "stars": 26861,
+          "forks": 2558,
+          "pushedAt": "2026-08-03T14:44:46Z",
           "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
           "homepage": "https://mastra.ai",
           "topics": [
@@ -980,22 +972,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "@mastra/core@1.54.0",
-            "publishedAt": "2026-07-30T11:54:39Z",
-            "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.54.0"
+            "tag": "@mastra/core@1.55.0",
+            "publishedAt": "2026-07-31T12:00:56Z",
+            "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.55.0"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 0
+          "daysSinceRelease": 3
         }
       ],
       "signal": {
-        "stars": 26732,
+        "stars": 26861,
         "daysSincePush": 0,
-        "daysSinceRelease": 0,
+        "daysSinceRelease": 3,
         "latestRelease": {
-          "tag": "@mastra/core@1.54.0",
-          "publishedAt": "2026-07-30T11:54:39Z",
-          "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.54.0"
+          "tag": "@mastra/core@1.55.0",
+          "publishedAt": "2026-07-31T12:00:56Z",
+          "url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.55.0"
         }
       }
     },
@@ -1010,9 +1002,9 @@
       "repos": [
         {
           "fullName": "vercel/ai",
-          "stars": 25907,
-          "forks": 4886,
-          "pushedAt": "2026-07-30T12:27:37Z",
+          "stars": 25986,
+          "forks": 4901,
+          "pushedAt": "2026-08-03T13:31:48Z",
           "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
           "homepage": "https://ai-sdk.dev",
           "topics": [
@@ -1034,22 +1026,22 @@
           ],
           "archived": false,
           "latestRelease": {
-            "tag": "@ai-sdk/minimax@2.0.0",
-            "publishedAt": "2026-07-29T22:25:54Z",
-            "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/minimax%402.0.0"
+            "tag": "@ai-sdk/fireworks@1.0.51",
+            "publishedAt": "2026-08-02T19:04:45Z",
+            "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/fireworks%401.0.51"
           },
           "daysSincePush": 0,
           "daysSinceRelease": 0
         }
       ],
       "signal": {
-        "stars": 25907,
+        "stars": 25986,
         "daysSincePush": 0,
         "daysSinceRelease": 0,
         "latestRelease": {
-          "tag": "@ai-sdk/minimax@2.0.0",
-          "publishedAt": "2026-07-29T22:25:54Z",
-          "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/minimax%402.0.0"
+          "tag": "@ai-sdk/fireworks@1.0.51",
+          "publishedAt": "2026-08-02T19:04:45Z",
+          "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/fireworks%401.0.51"
         }
       }
     },
@@ -1064,9 +1056,9 @@
       "repos": [
         {
           "fullName": "dapr/dapr-agents",
-          "stars": 728,
-          "forks": 137,
-          "pushedAt": "2026-07-21T14:35:19Z",
+          "stars": 732,
+          "forks": 136,
+          "pushedAt": "2026-07-30T14:04:20Z",
           "description": "Build autonomous, resilient and observable AI agents with built-in workflow orchestration, security, statefulness and telemetry.",
           "homepage": "https://docs.dapr.io/developing-applications/dapr-agents/",
           "topics": [],
@@ -1076,14 +1068,14 @@
             "publishedAt": "2026-06-15T13:27:40Z",
             "url": "https://github.com/dapr/dapr-agents/releases/tag/v1.0.5"
           },
-          "daysSincePush": 8,
-          "daysSinceRelease": 44
+          "daysSincePush": 4,
+          "daysSinceRelease": 49
         }
       ],
       "signal": {
-        "stars": 728,
-        "daysSincePush": 8,
-        "daysSinceRelease": 44,
+        "stars": 732,
+        "daysSincePush": 4,
+        "daysSinceRelease": 49,
         "latestRelease": {
           "tag": "v1.0.5",
           "publishedAt": "2026-06-15T13:27:40Z",
@@ -1102,12 +1094,17 @@
       "repos": [
         {
           "fullName": "modelcontextprotocol/specification",
-          "stars": 8777,
-          "forks": 1679,
-          "pushedAt": "2026-07-30T00:23:28Z",
+          "stars": 8843,
+          "forks": 1687,
+          "pushedAt": "2026-08-03T14:12:11Z",
           "description": "Specification and documentation for the Model Context Protocol",
           "homepage": "https://modelcontextprotocol.io",
-          "topics": [],
+          "topics": [
+            "docs",
+            "mcp",
+            "specification",
+            "standard"
+          ],
           "archived": false,
           "latestRelease": {
             "tag": "2026-07-28",
@@ -1115,13 +1112,13 @@
             "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 5
         },
         {
           "fullName": "modelcontextprotocol/servers",
-          "stars": 89049,
-          "forks": 11331,
-          "pushedAt": "2026-07-29T23:09:46Z",
+          "stars": 89158,
+          "forks": 11365,
+          "pushedAt": "2026-08-03T02:57:08Z",
           "description": "Model Context Protocol Servers",
           "homepage": "https://modelcontextprotocol.io",
           "topics": [],
@@ -1132,13 +1129,13 @@
             "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.7.10"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 20
+          "daysSinceRelease": 24
         }
       ],
       "signal": {
-        "stars": 89049,
+        "stars": 89158,
         "daysSincePush": 0,
-        "daysSinceRelease": 20,
+        "daysSinceRelease": 24,
         "latestRelease": {
           "tag": "2026.7.10",
           "publishedAt": "2026-07-10T03:39:07Z",
@@ -1157,9 +1154,9 @@
       "repos": [
         {
           "fullName": "a2aproject/A2A",
-          "stars": 25103,
-          "forks": 2534,
-          "pushedAt": "2026-07-28T14:11:45Z",
+          "stars": 25165,
+          "forks": 2547,
+          "pushedAt": "2026-08-01T00:08:07Z",
           "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
           "homepage": "https://a2a-protocol.org/",
           "topics": [
@@ -1177,14 +1174,14 @@
             "publishedAt": "2026-05-28T11:34:36Z",
             "url": "https://github.com/a2aproject/A2A/releases/tag/v1.0.1"
           },
-          "daysSincePush": 1,
-          "daysSinceRelease": 63
+          "daysSincePush": 2,
+          "daysSinceRelease": 67
         }
       ],
       "signal": {
-        "stars": 25103,
-        "daysSincePush": 1,
-        "daysSinceRelease": 63,
+        "stars": 25165,
+        "daysSincePush": 2,
+        "daysSinceRelease": 67,
         "latestRelease": {
           "tag": "v1.0.1",
           "publishedAt": "2026-05-28T11:34:36Z",
@@ -1200,23 +1197,23 @@
       "top": [
         {
           "fullName": "obra/superpowers",
-          "stars": 263723
+          "stars": 265529
         },
         {
           "fullName": "langchain-ai/langchain",
-          "stars": 142989
+          "stars": 143324
         },
         {
           "fullName": "FoundationAgents/MetaGPT",
-          "stars": 69597
+          "stars": 69647
         },
         {
           "fullName": "microsoft/autogen",
-          "stars": 60104
+          "stars": 60191
         },
         {
           "fullName": "crewAIInc/crewAI",
-          "stars": 56380
+          "stars": 56569
         }
       ]
     },
@@ -1226,7 +1223,7 @@
       "top": [
         {
           "fullName": "lofcz/LLMTornado",
-          "stars": 629
+          "stars": 631
         }
       ]
     },
@@ -1236,23 +1233,23 @@
       "top": [
         {
           "fullName": "nanocoai/nanoclaw",
-          "stars": 30394
+          "stars": 30415
         },
         {
           "fullName": "anthropics/claude-agent-sdk-python",
-          "stars": 7765
+          "stars": 7793
         },
         {
           "fullName": "openai/openai-cs-agents-demo",
-          "stars": 6547
+          "stars": 6546
         },
         {
           "fullName": "AgentOps-AI/agentops",
-          "stars": 5743
+          "stars": 5749
         },
         {
           "fullName": "panaversity/learn-agentic-ai",
-          "stars": 4305
+          "stars": 4308
         }
       ]
     },
@@ -1262,23 +1259,23 @@
       "top": [
         {
           "fullName": "modelcontextprotocol/servers",
-          "stars": 89049
+          "stars": 89158
         },
         {
           "fullName": "modelcontextprotocol/python-sdk",
-          "stars": 23792
+          "stars": 23862
         },
         {
           "fullName": "modelcontextprotocol/typescript-sdk",
-          "stars": 13006
+          "stars": 13050
         },
         {
           "fullName": "hangwin/mcp-chrome",
-          "stars": 12237
+          "stars": 12249
         },
         {
           "fullName": "modelcontextprotocol/registry",
-          "stars": 7093
+          "stars": 7100
         }
       ]
     }

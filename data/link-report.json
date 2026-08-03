@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-07-30T12:22:17.364Z",
-  "total": 18,
+  "checkedAt": "2026-08-03T14:46:24.993Z",
+  "total": 19,
   "failed": 0,
   "results": [
     {
@@ -40,6 +40,11 @@
     },
     {
       "url": "https://docs.llamaindex.ai/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://google.github.io/adk-docs/",
       "ok": true,
       "status": 200
     },

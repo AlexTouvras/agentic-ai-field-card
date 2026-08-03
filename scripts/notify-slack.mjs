@@ -100,12 +100,20 @@ async function fetchRepoFile(path, ref) {
 
 function extractSection(body, headingRe) {
   if (!body) return "";
+  // Allow heading at start of body or after a newline
   const match = body.match(headingRe);
   if (!match) return "";
   const start = match.index + match[0].length;
   const rest = body.slice(start);
   const next = rest.search(/\n#{1,3}\s+/);
   return (next === -1 ? rest : rest.slice(0, next)).trim();
+}
+
+function summarySection(body) {
+  return (
+    extractSection(body, /(?:^|\n)##\s+Summary\b[^\n]*\n/i) ||
+    extractSection(body, /(?:^|\n)###\s+Summary\b[^\n]*\n/i)
+  );
 }
 
 function bulletsFromLines(text, limit = 6) {
@@ -124,9 +132,7 @@ function changedLineFromHtml(html) {
 }
 
 function hasJudgmentSummary(body) {
-  const summary =
-    extractSection(body, /\n##\s+Summary\b[^\n]*\n/i) ||
-    extractSection(body, /\n###\s+Summary\b[^\n]*\n/i);
+  const summary = summarySection(body);
   return Boolean(summary && bulletsFromLines(summary, 1).length > 0);
 }
 
@@ -134,9 +140,7 @@ async function buildChangeSummary(pr) {
   const lines = [];
   let fromJudgment = false;
 
-  const explicit =
-    extractSection(pr.body, /\n##\s+Summary\b[^\n]*\n/i) ||
-    extractSection(pr.body, /\n###\s+Summary\b[^\n]*\n/i);
+  const explicit = summarySection(pr.body);
   if (explicit) {
     fromJudgment = true;
     for (const b of bulletsFromLines(explicit, 6)) lines.push(b);

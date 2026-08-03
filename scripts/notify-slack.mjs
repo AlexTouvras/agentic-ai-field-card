@@ -80,7 +80,8 @@ async function resolvePr(prNumber) {
   return {
     title: data.title,
     url: data.html_url,
-    body: data.body || "",
+    // PowerShell Out-File UTF-8 often prefixes a BOM; strip it for heading parses
+    body: String(data.body || "").replace(/^\uFEFF/, ""),
     headSha: data.head?.sha || null,
   };
 }

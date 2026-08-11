@@ -19,12 +19,15 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 | Piece | What it does |
 |---|---|
-| **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools, checks doc links, bumps stamp, opens a **discovery PR** — **no vendor LLM**, no Slack Approve yet |
-| **Friday Cursor Automation (17:00 local)** | Judges update vs no-change, edits `index.html` when earned, writes `## Summary`, triggers Slack notify |
+| **Friday GitHub Action (12:00 UTC)** | Discovers frameworks/tools, checks doc links, bumps stamp, opens a **discovery PR**, Slack *discovery ready* (no Approve) |
+| **Friday Cursor Automation (17:00 local)** | Judges update vs no-change, edits `index.html` when earned, writes `## Summary`, triggers Slack Approve notify |
 | **Slack #orbit Approve** | Preview of proposed HTML + signed Approve/Skip (Orbit confirm page). Approve squash-merges; Skip closes |
+| **Judgment watchdog (Sat + Mon 06:00 UTC)** | If the weekly PR still lacks `## Summary`, pings #orbit (*judgment missed*); Monday fails the Actions run |
 | **Broken-link issue** | Opens a labeled issue when Use/framework URLs fail |
 
-CI uses only `GITHUB_TOKEN` for discovery. Judgment runs in Cursor Cloud Automation. Approve is **not** auto-merge from the agent — you confirm in Slack (confirm page first, like essays).
+CI uses only `GITHUB_TOKEN` for discovery. Judgment runs in Cursor Cloud Automation. Approve is **not** auto-merge from the agent — you confirm in Slack (confirm page first, like essays). Silence is a bug: you should always get *discovery ready*, then either Approve links or a watchdog alert.
+
+`Notify Slack approve` exits non-zero if `## Summary` is missing (`FORCE_NOTIFY=1` override only for recovery).
 
 ### Secrets (field-card repo)
 

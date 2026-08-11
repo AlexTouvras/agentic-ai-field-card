@@ -4,6 +4,17 @@ Each Friday the automation **judges whether the public card should change**, app
 
 Discovery alone is not enough. Every run must end with an explicit **update** or **no HTML change** decision.
 
+## Fail-closed visibility (do not rely on silence)
+
+| Signal | Meaning |
+|---|---|
+| Slack *discovery ready* (Fri ~15:00 EEST) | CI opened the weekly PR. Await Cursor judgment — **no Approve yet**. |
+| Slack *field card weekly refresh* + Approve | Judgment finished; preview + Approve/Skip are live. |
+| Slack *judgment missed* (Sat / Mon) | Cursor Automation did not write `## Summary` / notify. Unstick manually. |
+| Actions *Judgment watchdog* red on Monday | Same stuck state — treat as a page. |
+
+`Notify Slack approve` **refuses** to post Approve links until the PR has a real `## Summary` (override only with `FORCE_NOTIFY=1`).
+
 ## Steps
 
 1. Check out `AlexTouvras/agentic-ai-field-card`. Prefer open branch `chore/weekly-refresh-YYYY-Www` for this ISO week; otherwise create/update it from `main`.

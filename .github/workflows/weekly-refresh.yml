@@ -76,6 +76,7 @@ jobs:
         run: node scripts/bump-version.mjs
 
       - name: Open refresh PR
+        id: pr
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -88,6 +89,7 @@ jobs:
           git add index.html data/link-report.json data/discovery-report.json data/discovery-report.md data/proposed-updates.json data/watchlist.json || true
           if git diff --staged --quiet; then
             echo "Nothing to commit."
+            echo "opened=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "chore: weekly discovery for Cursor Automation"
@@ -132,10 +134,26 @@ jobs:
           EXISTING=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             gh pr edit "$EXISTING" --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE"
+            PR_NUMBER="$EXISTING"
             echo "Updated PR #$EXISTING"
           else
-            gh pr create --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE"
+            URL=$(gh pr create --title "chore: weekly field card discovery + refresh" --body-file "$BODY_FILE")
+            PR_NUMBER=$(echo "$URL" | grep -oE '[0-9]+$')
+            echo "Created PR #$PR_NUMBER ($URL)"
           fi
+          echo "opened=true" >> "$GITHUB_OUTPUT"
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+
+      - name: Slack #orbit — discovery ready (awaiting judgment)
+        if: steps.pr.outputs.opened == 'true'
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          STATUS_MODE: discovery_ready
+          DISCOVERY_STATS: ${{ steps.summary.outputs.stats }}
+          GH_TOKEN: ${{ github.token }}
+          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node scripts/slack-status.mjs
 
       - name: Open issue on broken links
         if: steps.links.outcome != 'success'

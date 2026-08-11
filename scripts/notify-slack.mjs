@@ -9,6 +9,7 @@
  *   PR_NUMBER (required)
  *   PR_URL (optional)
  *   GH_TOKEN / GITHUB_TOKEN (optional; used to resolve PR + change summary)
+ *   FORCE_NOTIFY=1 (optional; allow Approve links without ## Summary — recovery only)
  */
 import { createHmac } from "node:crypto";
 
@@ -207,9 +208,24 @@ const skip = actionUrl(prNumber, "skip");
 const live = "https://alextouvras.github.io/agentic-ai-field-card/";
 const { text: summary, fromJudgment } = await buildChangeSummary(pr);
 const judgmentOk = fromJudgment || hasJudgmentSummary(pr.body);
+const forceNotify = process.env.FORCE_NOTIFY === "1";
+
+// Fail closed: Approve links must not land before Cursor writes ## Summary.
+if (!judgmentOk && !forceNotify) {
+  console.error(
+    JSON.stringify({
+      ok: false,
+      error: "judgment_summary_missing",
+      pr: Number(prNumber),
+      hint: "Write ## Summary on the PR (update or no-change), then re-run. Override with FORCE_NOTIFY=1 only for recovery.",
+    })
+  );
+  process.exit(1);
+}
+
 const caution = judgmentOk
   ? ""
-  : "\n\n_Discovery-only — Cursor judgment Summary missing. Review carefully before Approve._";
+  : "\n\n_FORCE_NOTIFY — Cursor judgment Summary missing. Review carefully before Approve._";
 
 const text = `Field card ready for Approve: ${pr.title}`;
 const blocks = [

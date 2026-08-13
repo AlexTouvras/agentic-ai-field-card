@@ -15,6 +15,19 @@ Discovery alone is not enough. Every run must end with an explicit **update** or
 
 `Notify Slack approve` **refuses** to post Approve links until the PR has a real `## Summary` (override only with `FORCE_NOTIFY=1`).
 
+## Scope (keep this card honest)
+
+This is a **decision stack**, not a capability glossary. The stable spine is:
+
+- **RAG → AGENT → MCP → A2A** hero codes (do not merge MCP into A2A / “Agentic AI”)
+- Thin **LLM** floor band above RAG (`Language — prompted chat`); ladder step 1 stays `LLM / prompted chat`
+- Verb line under the H1 (`Understand → find → act → orchestrate`) — do not drop
+- **Always on** foundation strip (Security, Governance, Observability, Evals, Human Approve) — not picker items
+- Problem → use → example table, Rules vs skills, ladder + kill switch, anti-patterns
+- Framework picker by **constraint**
+
+Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-progress timeline.
+
 ## Steps
 
 1. Check out `AlexTouvras/agentic-ai-field-card`. Prefer open branch `chore/weekly-refresh-YYYY-Www` for this ISO week; otherwise create/update it from `main`.

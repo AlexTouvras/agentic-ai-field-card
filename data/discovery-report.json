@@ -1,5 +1,5 @@
 {
-  "discoveredAt": "2026-08-21T12:56:28.348Z",
+  "discoveredAt": "2026-08-21T14:02:43.619Z",
   "summary": {
     "watchlistItems": 16,
     "notOnCard": 6,
@@ -26,7 +26,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Semantic Kernel",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 28474,
+      "stars": 28476,
       "docs": [
         "https://learn.microsoft.com/en-us/semantic-kernel/"
       ],
@@ -54,7 +54,7 @@
       "kind": "watchlist-not-on-card",
       "name": "Mastra",
       "reason": "Tracked in watchlist but not present on the public card",
-      "stars": 27350,
+      "stars": 27351,
       "docs": [
         "https://mastra.ai/docs"
       ],
@@ -96,7 +96,7 @@
       "kind": "github-search-novel",
       "name": "MetaGPT",
       "reason": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-      "stars": 69932,
+      "stars": 69934,
       "docs": [
         "https://atoms.dev/"
       ],
@@ -110,7 +110,7 @@
       "kind": "github-search-novel",
       "name": "nanobot",
       "reason": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
-      "stars": 47250,
+      "stars": 47252,
       "docs": [
         "https://nanobot.wiki"
       ],
@@ -124,7 +124,7 @@
       "kind": "github-search-novel",
       "name": "hyperframes",
       "reason": "Write HTML. Render video. Built for agents.",
-      "stars": 41912,
+      "stars": 41916,
       "docs": [],
       "repos": [
         "heygen-com/hyperframes"
@@ -136,7 +136,7 @@
       "kind": "github-search-novel",
       "name": "AstrBot",
       "reason": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "stars": 39447,
+      "stars": 39448,
       "docs": [
         "https://astrbot.app"
       ],
@@ -164,7 +164,7 @@
       "kind": "github-search-novel",
       "name": "Anthropic-Cybersecurity-Skills",
       "reason": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
-      "stars": 30472,
+      "stars": 30479,
       "docs": [
         "https://mahipal.engineer/Anthropic-Cybersecurity-Skills/"
       ],
@@ -178,7 +178,7 @@
       "kind": "github-search-novel",
       "name": "Open-AutoGLM",
       "reason": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
-      "stars": 26059,
+      "stars": 26060,
       "docs": [
         "https://autoglm.z.ai/blog"
       ],
@@ -192,7 +192,7 @@
       "kind": "github-search-novel",
       "name": "12-factor-agents",
       "reason": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
-      "stars": 25401,
+      "stars": 25403,
       "docs": [],
       "repos": [
         "humanlayer/12-factor-agents"
@@ -304,7 +304,7 @@
         "publishedAt": "2026-08-19T13:44:38Z",
         "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.22.0"
       },
-      "daysSinceRelease": 1
+      "daysSinceRelease": 2
     },
     {
       "name": "Claude Agent SDK",
@@ -399,8 +399,8 @@
       "repos": [
         {
           "fullName": "langchain-ai/langgraph",
-          "stars": 40169,
-          "forks": 6759,
+          "stars": 40172,
+          "forks": 6761,
           "pushedAt": "2026-08-20T07:50:25Z",
           "description": "Build resilient agents.",
           "homepage": "https://docs.langchain.com/oss/python/langgraph/",
@@ -435,7 +435,7 @@
         }
       ],
       "signal": {
-        "stars": 40169,
+        "stars": 40172,
         "daysSincePush": 1,
         "daysSinceRelease": 1,
         "latestRelease": {
@@ -456,7 +456,7 @@
       "repos": [
         {
           "fullName": "crewAIInc/crewAI",
-          "stars": 57419,
+          "stars": 57422,
           "forks": 8201,
           "pushedAt": "2026-08-21T11:36:09Z",
           "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
@@ -479,7 +479,7 @@
         }
       ],
       "signal": {
-        "stars": 57419,
+        "stars": 57422,
         "daysSincePush": 0,
         "daysSinceRelease": 1,
         "latestRelease": {
@@ -501,7 +501,7 @@
         {
           "fullName": "run-llama/llama_index",
           "stars": 51787,
-          "forks": 7979,
+          "forks": 7978,
           "pushedAt": "2026-08-20T15:46:41Z",
           "description": "LlamaIndex is the leading document agent and OCR platform",
           "homepage": "https://developers.llamaindex.ai",
@@ -549,9 +549,9 @@
       "repos": [
         {
           "fullName": "microsoft/agent-framework",
-          "stars": 13022,
+          "stars": 13024,
           "forks": 2204,
-          "pushedAt": "2026-08-21T12:51:42Z",
+          "pushedAt": "2026-08-21T13:55:48Z",
           "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
           "homepage": "https://aka.ms/agent-framework",
           "topics": [
@@ -577,7 +577,7 @@
         }
       ],
       "signal": {
-        "stars": 13022,
+        "stars": 13024,
         "daysSincePush": 0,
         "daysSinceRelease": 2,
         "latestRelease": {
@@ -598,7 +598,7 @@
       "repos": [
         {
           "fullName": "openai/openai-agents-python",
-          "stars": 28826,
+          "stars": 28829,
           "forks": 4546,
           "pushedAt": "2026-08-21T05:14:09Z",
           "description": "A lightweight, powerful framework for multi-agent workflows",
@@ -619,13 +619,13 @@
             "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.22.0"
           },
           "daysSincePush": 0,
-          "daysSinceRelease": 1
+          "daysSinceRelease": 2
         }
       ],
       "signal": {
-        "stars": 28826,
+        "stars": 28829,
         "daysSincePush": 0,
-        "daysSinceRelease": 1,
+        "daysSinceRelease": 2,
         "latestRelease": {
           "tag": "v0.22.0",
           "publishedAt": "2026-08-19T13:44:38Z",
@@ -644,8 +644,8 @@
       "repos": [
         {
           "fullName": "anthropics/claude-agent-sdk-python",
-          "stars": 7947,
-          "forks": 1247,
+          "stars": 7948,
+          "forks": 1248,
           "pushedAt": "2026-08-20T20:48:57Z",
           "description": null,
           "homepage": null,
@@ -678,7 +678,7 @@
         }
       ],
       "signal": {
-        "stars": 7947,
+        "stars": 7948,
         "daysSincePush": 0,
         "daysSinceRelease": 0,
         "latestRelease": {
@@ -699,8 +699,8 @@
       "repos": [
         {
           "fullName": "pydantic/pydantic-ai",
-          "stars": 19428,
-          "forks": 2571,
+          "stars": 19429,
+          "forks": 2572,
           "pushedAt": "2026-08-21T11:42:24Z",
           "description": "How Python does AI: agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end.",
           "homepage": "https://pydantic.dev/pydantic-ai",
@@ -724,7 +724,7 @@
         }
       ],
       "signal": {
-        "stars": 19428,
+        "stars": 19429,
         "daysSincePush": 0,
         "daysSinceRelease": 0,
         "latestRelease": {
@@ -855,7 +855,7 @@
       "repos": [
         {
           "fullName": "microsoft/semantic-kernel",
-          "stars": 28474,
+          "stars": 28476,
           "forks": 4731,
           "pushedAt": "2026-08-21T02:44:34Z",
           "description": "Integrate cutting-edge LLM technology quickly and easily into your apps",
@@ -878,7 +878,7 @@
         }
       ],
       "signal": {
-        "stars": 28474,
+        "stars": 28476,
         "daysSincePush": 0,
         "daysSinceRelease": 2,
         "latestRelease": {
@@ -901,7 +901,7 @@
           "fullName": "deepset-ai/haystack",
           "stars": 26268,
           "forks": 3026,
-          "pushedAt": "2026-08-21T12:50:53Z",
+          "pushedAt": "2026-08-21T13:53:48Z",
           "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
           "homepage": "https://haystack.deepset.ai",
           "topics": [
@@ -958,9 +958,9 @@
       "repos": [
         {
           "fullName": "mastra-ai/mastra",
-          "stars": 27350,
+          "stars": 27351,
           "forks": 2670,
-          "pushedAt": "2026-08-21T12:44:04Z",
+          "pushedAt": "2026-08-21T13:56:59Z",
           "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
           "homepage": "https://mastra.ai",
           "topics": [
@@ -989,7 +989,7 @@
         }
       ],
       "signal": {
-        "stars": 27350,
+        "stars": 27351,
         "daysSincePush": 0,
         "daysSinceRelease": 1,
         "latestRelease": {
@@ -1011,8 +1011,8 @@
         {
           "fullName": "vercel/ai",
           "stars": 26332,
-          "forks": 5000,
-          "pushedAt": "2026-08-21T12:45:04Z",
+          "forks": 5001,
+          "pushedAt": "2026-08-21T13:14:29Z",
           "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
           "homepage": "https://ai-sdk.dev",
           "topics": [
@@ -1077,13 +1077,13 @@
             "url": "https://github.com/dapr/dapr-agents/releases/tag/v1.0.5"
           },
           "daysSincePush": 4,
-          "daysSinceRelease": 66
+          "daysSinceRelease": 67
         }
       ],
       "signal": {
         "stars": 740,
         "daysSincePush": 4,
-        "daysSinceRelease": 66,
+        "daysSinceRelease": 67,
         "latestRelease": {
           "tag": "v1.0.5",
           "publishedAt": "2026-06-15T13:27:40Z",
@@ -1124,8 +1124,8 @@
         },
         {
           "fullName": "modelcontextprotocol/servers",
-          "stars": 89733,
-          "forks": 11489,
+          "stars": 89734,
+          "forks": 11491,
           "pushedAt": "2026-08-20T01:12:36Z",
           "description": "Model Context Protocol Servers",
           "homepage": "https://modelcontextprotocol.io",
@@ -1141,7 +1141,7 @@
         }
       ],
       "signal": {
-        "stars": 89733,
+        "stars": 89734,
         "daysSincePush": 1,
         "daysSinceRelease": 2,
         "latestRelease": {
@@ -1162,7 +1162,7 @@
       "repos": [
         {
           "fullName": "a2aproject/A2A",
-          "stars": 25440,
+          "stars": 25441,
           "forks": 2574,
           "pushedAt": "2026-08-18T17:09:57Z",
           "description": "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications.",
@@ -1187,7 +1187,7 @@
         }
       ],
       "signal": {
-        "stars": 25440,
+        "stars": 25441,
         "daysSincePush": 2,
         "daysSinceRelease": 85,
         "latestRelease": {
@@ -1205,23 +1205,23 @@
       "top": [
         {
           "fullName": "obra/superpowers",
-          "stars": 275370
+          "stars": 275401
         },
         {
           "fullName": "langchain-ai/langchain",
-          "stars": 144716
+          "stars": 144718
         },
         {
           "fullName": "FoundationAgents/MetaGPT",
-          "stars": 69932
+          "stars": 69934
         },
         {
           "fullName": "microsoft/autogen",
-          "stars": 60556
+          "stars": 60558
         },
         {
           "fullName": "crewAIInc/crewAI",
-          "stars": 57419
+          "stars": 57422
         }
       ]
     },
@@ -1245,7 +1245,7 @@
         },
         {
           "fullName": "anthropics/claude-agent-sdk-python",
-          "stars": 7947
+          "stars": 7948
         },
         {
           "fullName": "openai/openai-cs-agents-demo",
@@ -1267,7 +1267,7 @@
       "top": [
         {
           "fullName": "modelcontextprotocol/servers",
-          "stars": 89733
+          "stars": 89734
         },
         {
           "fullName": "modelcontextprotocol/python-sdk",

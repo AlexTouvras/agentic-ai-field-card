@@ -1,11 +1,59 @@
 {
   "mode": "cursor-automation",
-  "generatedAt": "2026-08-28T22:00:20.804Z",
-  "candidateCount": 12,
+  "generatedAt": "2026-09-04T16:04:13.354Z",
+  "candidateCount": 18,
   "changelog": [
     "Discovery complete — Cursor Automation applies picker/HTML judgment (no vendor LLM API in CI)"
   ],
   "deferred": [
+    {
+      "name": "AG2",
+      "why": "medium: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://docs.ag2.ai/",
+      "repos": [
+        "ag2ai/ag2"
+      ]
+    },
+    {
+      "name": "Semantic Kernel",
+      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://learn.microsoft.com/en-us/semantic-kernel/",
+      "repos": [
+        "microsoft/semantic-kernel"
+      ]
+    },
+    {
+      "name": "Haystack",
+      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://docs.haystack.deepset.ai/",
+      "repos": [
+        "deepset-ai/haystack"
+      ]
+    },
+    {
+      "name": "Mastra",
+      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://mastra.ai/docs",
+      "repos": [
+        "mastra-ai/mastra"
+      ]
+    },
+    {
+      "name": "Vercel AI SDK",
+      "why": "high: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://sdk.vercel.ai/docs",
+      "repos": [
+        "vercel/ai"
+      ]
+    },
+    {
+      "name": "Dapr Agents",
+      "why": "low: watchlist-not-on-card — Tracked in watchlist but not present on the public card",
+      "docs": "https://docs.dapr.io/developing-ai/dapr-agents/",
+      "repos": [
+        "dapr/dapr-agents"
+      ]
+    },
     {
       "name": "MetaGPT",
       "why": "high: github-search-novel — 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
@@ -52,54 +100,6 @@
       "docs": "https://nanoclaw.dev",
       "repos": [
         "nanocoai/nanoclaw"
-      ]
-    },
-    {
-      "name": "Open-AutoGLM",
-      "why": "high: github-search-novel — An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
-      "docs": "https://autoglm.z.ai/blog",
-      "repos": [
-        "zai-org/Open-AutoGLM"
-      ]
-    },
-    {
-      "name": "12-factor-agents",
-      "why": "high: github-search-novel — What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
-      "docs": null,
-      "repos": [
-        "humanlayer/12-factor-agents"
-      ]
-    },
-    {
-      "name": "python-sdk",
-      "why": "high: github-search-novel — The official Python SDK for Model Context Protocol servers and clients",
-      "docs": "https://py.sdk.modelcontextprotocol.io/",
-      "repos": [
-        "modelcontextprotocol/python-sdk"
-      ]
-    },
-    {
-      "name": "typescript-sdk",
-      "why": "high: github-search-novel — The official TypeScript SDK for Model Context Protocol servers and clients",
-      "docs": "https://ts.sdk.modelcontextprotocol.io/v2",
-      "repos": [
-        "modelcontextprotocol/typescript-sdk"
-      ]
-    },
-    {
-      "name": "mcp-chrome",
-      "why": "high: github-search-novel — Chrome MCP Server is a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.",
-      "docs": null,
-      "repos": [
-        "hangwin/mcp-chrome"
-      ]
-    },
-    {
-      "name": "registry",
-      "why": "high: github-search-novel — A community driven registry service for Model Context Protocol (MCP) servers.",
-      "docs": "https://github.com/modelcontextprotocol/registry/tree/main/docs",
-      "repos": [
-        "modelcontextprotocol/registry"
       ]
     }
   ],

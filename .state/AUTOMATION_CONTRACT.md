@@ -18,8 +18,7 @@
 
 | Name | Trigger | Output | Human gate |
 |------|---------|--------|------------|
-| Weekly discovery | GHA `weekly-refresh.yml` Thu 12:00 UTC | opens PR | none (discovery only) |
-| Weekly judgment | Cursor weekly-content-pass Fri 17:00 | PR `## Summary` | Friday 18:00 review agent |
+| Weekly judgment | Cursor weekly-content-pass Fri 17:00 | discover + PR `## Summary` | Friday 18:00 review agent |
 | Weekly review | Orbit Cursor automation Fri 18:00 | Apply review | review agent publishes |
 | Judgment watchdog | GHA `judgment-watchdog.yml` Mon | `#orbit` warn/fail | human if Friday missed |
 

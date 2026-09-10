@@ -1,7 +1,7 @@
 name: Notify Slack approve
 
-# Posts #orbit Approve/Skip for a field-card PR (Orbit webhook + signed links).
-# Called after Cursor finishes the HTML pass, or manually.
+# Leftover. Not the weekly gate. Friday 18:00 review uses Apply review.
+# Do not call this from automations.
 
 on:
   workflow_dispatch:

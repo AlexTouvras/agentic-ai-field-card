@@ -10,8 +10,9 @@ Do **not** post Approve links from this run. The review agent is the gate. If th
 
 ## Scope (keep this card honest)
 
-This is a **decision stack**, not a capability glossary. The stable spine is:
+This is a decision sequence, not a capability glossary. Public H1 is loop/not a menu — analytics owns “stack”. The stable spine is:
 
+- H1: `Agentic AI is a loop, not a menu` (do not revert this to stack; analytics owns that word)
 - **RAG → AGENT → MCP → A2A** hero codes (do not merge MCP into A2A / “Agentic AI”)
 - Thin **LLM** floor band above RAG (`Language — prompted chat`); ladder step 1 stays `LLM / prompted chat`
 - Verb line under the H1 (`Understand → find → act → orchestrate`) — do not drop
@@ -34,6 +35,7 @@ Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-pro
    - Do not invent docs URLs; use discovery report, watchlist, or existing card links.
    - Decision table: only if a new *job* appeared (new brand ≠ new layer).
    - Keep Use labels short and linked; nuance in Example.
+   - Do not change the public H1.
    - No editor notes on the public HTML.
    - Update the footer **Changed** line; bump version with `npm run bump:version` when the card content changed.
 5. If **no HTML change**: leave picker/table alone. Keep the weekly stamp CI (or you) already bumped. Stamp-only still ships — the review agent **approves** it. Still commit discovery artifacts if you re-ran discover on this branch.

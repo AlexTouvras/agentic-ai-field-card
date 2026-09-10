@@ -8,7 +8,7 @@ Follow the shared rules in Orbit `docs/architecture/field-card-review.md` if you
 
 ## Spine (Agentic AI)
 
-RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Picker ≤7 by constraint. Not a vendor wall.
+H1: `Agentic AI is a loop, not a menu` (do not revert to stack; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Picker ≤7 by constraint. Not a vendor wall. CSS `.stack` is layout only.
 
 ## Apply
 

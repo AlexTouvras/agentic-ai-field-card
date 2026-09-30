@@ -4,6 +4,7 @@
  * Exits 0 when that commit's contract, host behavior, runtime version, and
  * .riv are all readable. Does not vendor the file.
  */
+import fs from "node:fs";
 import {
   FALLBACK_ROBOT,
   canvasRuntimeVersion,
@@ -53,6 +54,14 @@ function place() {
   const bh = parked ? 0.2 : 0.45;
 }
 `;
+
+const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
+const inline = html.match(/<script type="module">\n([\s\S]*?)\n  <\/script>\n<\/body>/);
+if (!inline) fail("index.html is missing the inlined robot module");
+const robotJs = fs.readFileSync(new URL("../robot.js", import.meta.url), "utf8").trim();
+if (inline[1].trim() !== robotJs) {
+  fail("index.html robot module is out of date with robot.js — Orbit only publishes index.html");
+}
 
 const sample = parseRobotContract(sampleRobot);
 if (!sample || sample.name !== "Widget" || sample.props.poke !== "tap" || sample.height !== 480) {

@@ -4,6 +4,8 @@ Standalone one-pager: [`index.html`](./index.html)
 
 **Live:** after Pages is enabled → `https://alextouvras.github.io/agentic-ai-field-card/`
 
+The storytelling robot sits on this page the same way it does on [alextouvras.com/stories/ai-card](https://alextouvras.com/stories/ai-card): bottom-right chrome, a tap tucks it into the corner. `robot.js` loads `robot.riv`, its view-model contract, and the Rive runtime from the current `main` commit of `AlexTouvras/storytelling`, so a new robot there shows up here without copying the file. Inside that story iframe the script stays quiet, because the story page already draws the robot. Print / PDF leaves it off.
+
 Public artifact only. Editor / maintenance notes live **here** and under `docs/`, not on the card.
 
 ## Use across channels

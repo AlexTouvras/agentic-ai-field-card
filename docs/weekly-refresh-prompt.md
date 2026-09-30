@@ -19,6 +19,7 @@ This is a decision sequence, not a capability glossary. Public H1 is loop/not a 
 - **Always on** foundation strip (Security, Governance, Observability, Evals, Human Approve) — not picker items
 - Problem → use → example table, Rules vs skills, ladder + kill switch, anti-patterns
 - Framework picker by **constraint**
+- The storytelling robot script (`robot.js`) at the bottom of `index.html`. It is chrome, loaded live from `AlexTouvras/storytelling`. Do not remove it, do not vendor `robot.riv`, and do not treat it as a card-content change.
 
 Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-progress timeline.
 

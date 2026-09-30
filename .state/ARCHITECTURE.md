@@ -2,7 +2,7 @@
 
 ## Storytelling robot
 
-`robot.js` is viewport chrome on `index.html`. It is not part of the decision card.
+`robot.js` is viewport chrome. It is not part of the decision card. The same module is inlined at the bottom of `index.html`, because Orbit publishes only that file to `https://alextouvras.com/field-card/` (`public/field-card/index.html`). A separate `robot.js` request 404s there.
 
 On each visit it resolves `AlexTouvras/storytelling` `main`, then loads that commit together:
 

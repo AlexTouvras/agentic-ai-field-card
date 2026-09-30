@@ -27,6 +27,8 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 The Friday content agent runs `npm run discover`. `weekly-refresh.yml` is manual backup only (`workflow_dispatch`). The Friday 18:00 review agent is the publish gate (`Apply review`).
 
+The public footer is a monthly review (`Next: October 2026` on the card), not a weekly stamp. A Friday with nothing new leaves Reviewed and Next where they are.
+
 ### Secrets (field-card repo)
 
 Copy from Orbit / Vercel as needed:
@@ -79,6 +81,7 @@ New protocols earn a **new layer** only if they solve a new job (knowledge / con
 | Fine-tune | https://platform.openai.com/docs/guides/fine-tuning |
 | A2A | https://a2a-protocol.org/ |
 | Evals | https://platform.openai.com/docs/guides/evals |
+| Bayesian opt | https://alextouvras.com/bayes-field-card/ |
 | LangGraph | https://langchain-ai.github.io/langgraph/ |
 | CrewAI | https://docs.crewai.com/ |
 | LlamaIndex | https://docs.llamaindex.ai/ |

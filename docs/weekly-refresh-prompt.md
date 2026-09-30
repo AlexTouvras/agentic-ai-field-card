@@ -38,14 +38,15 @@ Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-pro
    - Do not change the public H1.
    - No editor notes on the public HTML.
    - Update the footer **Changed** line; bump version with `npm run bump:version` when the card content changed.
-5. If **no HTML change**: leave picker/table alone. Keep the weekly stamp CI (or you) already bumped. Stamp-only still ships — the review agent **approves** it. Still commit discovery artifacts if you re-ran discover on this branch.
+   - Footer **Next** is the following calendar month (`October 2026`), never `week of`. `bump:version` writes that shape.
+5. If **no HTML change**: leave picker, table, Reviewed, and Next alone. Do not open a stamp-only bump. A no-change week does not move the monthly footer. Still commit discovery artifacts if you re-ran discover on this branch.
 6. Run `node scripts/check-links.mjs` and fix failures on any URLs you touched.
 7. Update `data/watchlist.json` for tools you confirm for ongoing tracking (`onCard` true/false).
 8. Commit and push to the weekly PR. Do not merge. Do not force-push `main`.
 9. Rewrite the PR body to include at least:
    - `## Summary` — 3–6 bullets: what changed on the card **or** why nothing changed; what was deferred.
    - `## Card preview` — one line: the review agent will compare this HTML to live.
-10. Stop. Do not notify Slack. Do not merge. The Friday 18:00 review agent publishes (including stamp-only). It declines only when the PR would make the live card worse.
+10. Stop. Do not notify Slack. Do not merge. The Friday 18:00 review agent publishes a card change, or leaves the previous card when nothing changed. It declines only when the PR would make the live card worse.
 
 ## Done when
 

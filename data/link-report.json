@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-04T16:04:04.645Z",
-  "total": 19,
+  "checkedAt": "2026-09-30T08:17:52.020Z",
+  "total": 21,
   "failed": 0,
   "results": [
     {
@@ -15,6 +15,16 @@
     },
     {
       "url": "https://alextouvras.com",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://alextouvras.com/bayes-field-card/index.html",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "https://alextouvras.com/field-card/",
       "ok": true,
       "status": 200
     },

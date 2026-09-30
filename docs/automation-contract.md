@@ -34,4 +34,5 @@ npm run ship:check
 
 - [ ] `npm run check:links` passes
 - [ ] PR has `## Summary` with `Decision: update|no-change`
+- [ ] Footer `Next` is the next calendar month, not `week of`
 - [ ] Orbit static copy synced after Apply review

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Bump the public footer version stamp to the current ISO week.
- * Does not invent content changes — only Reviewed / Next / version id.
+ * Bump the public footer version stamp.
+ * Version id stays the ISO week of the review. Next is the following calendar month
+ * (`October 2026`), never "week of". Does not invent content changes.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -24,18 +25,27 @@ function formatReviewed(d = new Date()) {
   return `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
-function nextWeekLabel(d = new Date()) {
-  const next = new Date(d);
-  next.setUTCDate(next.getUTCDate() + 7);
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  // "week of D Mon"
-  const day = next.getUTCDate();
-  const mon = months[next.getUTCMonth()];
-  return `week of ${day} ${mon}`;
+function nextMonthLabel(d = new Date()) {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const next = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+  return `${months[next.getUTCMonth()]} ${next.getUTCFullYear()}`;
 }
 
 const { year, week } = isoWeekParts();
-const stamp = `v${year}.${String(week).padStart(2, "0")} · Reviewed ${formatReviewed()} · Next: ${nextWeekLabel()}`;
+const stamp = `v${year}.${String(week).padStart(2, "0")} · Reviewed ${formatReviewed()} · Next: ${nextMonthLabel()}`;
 
 let html = fs.readFileSync(htmlPath, "utf8");
 const re = /(<div class="version" id="version-stamp">)([^<]+)(<\/div>)/;

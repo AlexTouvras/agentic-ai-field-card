@@ -77,12 +77,6 @@ jobs:
           NODE
         id: summary
 
-      - name: Bump version stamp
-        if: steps.gate.outputs.skip == 'none'
-        env:
-          CHANGED_NOTE: Weekly discovery ready for Cursor Automation
-        run: node scripts/bump-version.mjs
-
       - name: Open refresh PR
         if: steps.gate.outputs.skip == 'none'
         id: pr
@@ -116,7 +110,6 @@ jobs:
             echo "CI (no vendor LLM APIs):"
             echo "- Landscape discovery via GitHub search + watchlist"
             echo "- Doc link check"
-            echo "- Version stamp"
             echo "- Stats: \`${{ steps.summary.outputs.stats }}\`"
             echo
             if [ "${{ steps.links.outcome }}" = "success" ]; then
@@ -131,12 +124,12 @@ jobs:
             echo "Full report: \`data/discovery-report.md\`"
             echo
             echo "### Status: waiting for Friday Cursor judgment"
-            echo "This PR is **discovery only** (candidates + link check + stamp)."
+            echo "This PR is **discovery only** (candidates + link check). It does not rewrite the monthly footer."
             echo "Friday 17:00 Cursor Automation must:"
             echo "1. Decide update vs no HTML change"
             echo "2. Edit \`index.html\` only when earned"
             echo "3. Write \`## Summary\` on this PR"
-            echo "Friday 18:00 review agent publishes (including stamp-only). Do not Slack-Approve from CI."
+            echo "Footer Next stays the next calendar month, never \`week of\`. A no-change week leaves Reviewed and Next. Do not Slack-Approve from CI."
             echo
             echo "### Before merge"
             echo "- [ ] Cursor Automation applied judgment (\`## Summary\` present)"

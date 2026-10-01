@@ -29,7 +29,7 @@ Public artifact only. Editor / maintenance notes live **here** and under `docs/`
 
 The Friday content agent runs `npm run discover`. `weekly-refresh.yml` is manual backup only (`workflow_dispatch`). The Friday 18:00 review agent is the publish gate (`Apply review`).
 
-The public footer is a monthly review (`Next: October 2026` on the card), not a weekly stamp. A Friday with nothing new leaves Reviewed and Next where they are.
+The public footer is a monthly review (`Next: November 2026` on the card), not a weekly stamp. A Friday with nothing new leaves Reviewed and Next where they are.
 
 ### Secrets (field-card repo)
 

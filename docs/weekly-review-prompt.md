@@ -2,7 +2,7 @@
 
 You are the gate, not the author. Do not rewrite picker/table HTML. Compare the weekly PR to `main`, then **publish** when the PR changes the card. Decline only when the PR would make the live card worse.
 
-The public footer is a monthly review: `Next: <Month> <Year>` (for example `October 2026`), never `week of`. If there is no open PR, or the PR is discovery-only with no card change, leave the live card — do not ship a stamp-only bump.
+The public footer is a monthly review: `Next: <Month> <Year>` (for example `November 2026`), never `week of`. If there is no open PR, or the PR is discovery-only with no card change, leave the live card — do not ship a stamp-only bump.
 
 Follow the shared rules in Orbit `docs/architecture/field-card-review.md` if you have that repo; otherwise use this file.
 

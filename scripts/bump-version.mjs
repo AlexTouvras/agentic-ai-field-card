@@ -2,7 +2,7 @@
 /**
  * Bump the public footer version stamp.
  * Version id stays the ISO week of the review. Next is the following calendar month
- * (`October 2026`), never "week of". Does not invent content changes.
+ * (`November 2026`), never "week of". Does not invent content changes.
  */
 import fs from "node:fs";
 import path from "node:path";

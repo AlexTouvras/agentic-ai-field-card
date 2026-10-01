@@ -39,7 +39,7 @@ Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-pro
    - Do not change the public H1.
    - No editor notes on the public HTML.
    - Update the footer **Changed** line; bump version with `npm run bump:version` when the card content changed.
-   - Footer **Next** is the following calendar month (`October 2026`), never `week of`. `bump:version` writes that shape.
+   - Footer **Next** is the following calendar month (`November 2026`), never `week of`. `bump:version` writes that shape from the review date. Do not copy an older month out of this prompt.
 5. If **no HTML change**: leave picker, table, Reviewed, and Next alone. Do not open a stamp-only bump. A no-change week does not move the monthly footer. Still commit discovery artifacts if you re-ran discover on this branch.
 6. Run `node scripts/check-links.mjs` and fix failures on any URLs you touched.
 7. Update `data/watchlist.json` for tools you confirm for ongoing tracking (`onCard` true/false).

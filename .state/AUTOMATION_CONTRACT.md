@@ -2,7 +2,7 @@
 
 > Weekly judgment automation; JSON in-repo + Orbit backup.
 
-**Last updated:** 2026-09-30
+**Last updated:** 2026-10-01
 
 ## Runtime
 
@@ -26,7 +26,7 @@
 
 One weekly pass: discovery judgment → update **or** explicit no-change → PR `## Summary` → Friday 18:00 review publishes a card change.
 
-Public footer `Next` is the next calendar month (`October 2026`), never `week of`. A no-change week does not move Reviewed or Next. Manual `weekly-refresh.yml` does not rewrite the stamp.
+Public footer `Next` is the next calendar month (`November 2026`), never `week of`. A no-change week does not move Reviewed or Next. Manual `weekly-refresh.yml` does not rewrite the stamp. The October review (`v2026.40`, Reviewed 1 Oct 2026) is what moves the footer off the 4 Sep week-36 stamp.
 
 ## Tool allowlist (automations)
 

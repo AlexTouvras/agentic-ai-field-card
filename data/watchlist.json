@@ -4,21 +4,21 @@
       "name": "LangGraph",
       "repos": ["langchain-ai/langgraph"],
       "docs": ["https://langchain-ai.github.io/langgraph/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "control"
     },
     {
       "name": "CrewAI",
       "repos": ["crewAIInc/crewAI"],
       "docs": ["https://docs.crewai.com/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "speed"
     },
     {
       "name": "LlamaIndex",
       "repos": ["run-llama/llama_index"],
       "docs": ["https://docs.llamaindex.ai/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "data"
     },
     {
@@ -26,7 +26,7 @@
       "aliases": ["MS Agent Fw", "agent-framework"],
       "repos": ["microsoft/agent-framework"],
       "docs": ["https://learn.microsoft.com/en-us/agent-framework/overview/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "enterprise"
     },
     {
@@ -34,7 +34,7 @@
       "aliases": ["OpenAI Agents", "openai-agents-python", "OpenAI</a> /"],
       "repos": ["openai/openai-agents-python"],
       "docs": ["https://openai.github.io/openai-agents-python/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "handoffs"
     },
     {
@@ -42,21 +42,21 @@
       "aliases": ["Claude Agent", "claude-agent-sdk", "Claude</a> SDKs", "code.claude.com/docs/en/agent-sdk"],
       "repos": ["anthropics/claude-agent-sdk-python", "anthropics/claude-agent-sdk-typescript"],
       "docs": ["https://code.claude.com/docs/en/agent-sdk/overview"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "anthropic"
     },
     {
       "name": "Pydantic AI",
       "repos": ["pydantic/pydantic-ai"],
       "docs": ["https://ai.pydantic.dev/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "typed"
     },
     {
       "name": "Google ADK",
       "repos": ["google/adk-python"],
       "docs": ["https://google.github.io/adk-docs/"],
-      "onCard": true,
+      "onCard": false,
       "constraint": "google"
     },
     {

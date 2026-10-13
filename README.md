@@ -1,6 +1,6 @@
 # Agentic AI Field Card
 
-Standalone one-pager: [`index.html`](./index.html). One job on a closed loop. It stops at the thinnest layer that can finish it.
+Standalone one-pager: [`index.html`](./index.html). Don't start with an agent. Start with the job, then add a workflow, retrieval, or a loop only when the problem demands it.
 
 **Live:** after Pages is enabled → `https://alextouvras.github.io/agentic-ai-field-card/`
 
@@ -51,9 +51,9 @@ Copy from Orbit / Vercel as needed:
 
 | Stable (edit rarely) | Churn zone (monthly OK) |
 |---|---|
-| The loop picture: RAG → Agent → MCP → A2A, then stop or next step | A named-practice URL, when a better public source for the same move exists |
-| H1, hook, verb line, LLM floor | Version stamp + Changed line |
-| Three judgement lines, kill line, Always on | — |
+| Headline, the branch, and the loop with a human gate | A named-practice URL, when a better public source for the same move exists |
+| A2A as a boundary, not a tile | Version stamp + Changed line |
+| Prove it names bars and does not invent rates | — |
 
 New protocols earn a **new station** only if they solve a new job (knowledge / control / tools / peers). A renamed framework does not go on the sheet. Rules and skills stay under judgement, not as extra stations.
 

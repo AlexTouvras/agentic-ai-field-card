@@ -1,12 +1,10 @@
 # Architecture
 
-## Loop scene
+## Decision guide
 
-The public card is one picture. A job walks a closed loop — RAG, then an agent, then MCP, then A2A — and the return is labeled `stop or next step`. The sheet is a dark blue stage. The accent is a blue distinct from the story card’s cyan and the SDLC card’s lime. Prompted chat is a floor under the loop, not a station.
+The public card follows the decision-guide picture. The headline is `Don't start with an agent.` A business problem branches to a workflow, retrieval, or an agent. Four pattern buttons state why that choice fits and when to move up. Section 2 is the loop: observe, decide, act, verify, a human gate, and a retry. Architecture is six jobs with real doc links, not a vendor menu. A2A is a boundary sentence. Prove it names six bars and does not print invented rates.
 
-Motion is one lap. `prefers-reduced-motion` and print leave the drawings in their end state and park the job at the start of the lap. Under 900px the walking mark hides. Under 640px each layer is its own row. Print keeps the picture dark and sets the surrounding words in ink on white.
-
-The three judgement lines, the kill line, eight named-practice links, and the Always on strip sit under the picture. A framework picker does not.
+The sheet is a dark navy stage with a cyan glow. Selecting a pattern lights that branch. `prefers-reduced-motion` leaves the selected branch drawn and does not pulse the loop. Under 980px the loop stacks. Under 720px the branch wires hide and the choices stack. The storytelling robot stays viewport chrome.
 
 ## Storytelling robot
 

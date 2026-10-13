@@ -8,7 +8,7 @@ Follow the shared rules in Orbit `docs/architecture/field-card-review.md` if you
 
 ## Spine (Agentic AI)
 
-H1: `Agentic AI is a loop, not a menu` (do not revert to stack; analytics owns stack). Hook: `If a workflow can do it, it is not an agent.` The picture is one job on a closed loop — RAG → Agent → MCP → A2A — and the return is `stop or next step`. The job stops at the thinnest layer that can finish it. A2A stays behind a boundary. The LLM floor sits under the loop, not as a fifth station. Verb line, three judgement lines, kill line, Always on strip. Not a vendor wall. Do not put the problem table, the framework picker, or the ladder back in front of the picture. The month judges that picture.
+H1: `Don't start with an agent.` Hook: `Start with the job. Add autonomy only when the problem demands it.` The opening picture is a business problem branching to a workflow, retrieval, or an agent. Section 2 keeps the sentence `Agentic AI is a loop, not a menu` on the observe → decide → act → verify loop, with a retry and a human gate. A2A stays a boundary sentence, not a tile. Prompted chat is the floor, one sentence, not a station. Prove it names the bars and does not print invented rates. Not a vendor wall. Do not put the problem table, the framework picker, or the ladder back in front of the picture. The month judges that picture. Analytics still owns “stack”.
 
 ## Apply
 

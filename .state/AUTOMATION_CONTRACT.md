@@ -59,7 +59,7 @@ Do **not** depend on ProjectBrain MCP or chat history.
 
 - Merge to `main` from the 17:00 content pass
 - Slack Approve notify from the 17:00 content pass
-- Invent docs URLs; framework picker > 7 rows
+- Invent docs URLs; a framework picker or job table in front of the loop picture
 - Orbit static sync before the 18:00 review publishes
 
 ## Required secrets

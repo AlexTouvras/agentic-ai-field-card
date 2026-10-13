@@ -1,5 +1,13 @@
 # Architecture
 
+## Loop scene
+
+The public card is one picture. A job walks a closed loop — RAG, then an agent, then MCP, then A2A — and the return is labeled `stop or next step`. The sheet is a dark blue stage. The accent is a blue distinct from the story card’s cyan and the SDLC card’s lime. Prompted chat is a floor under the loop, not a station.
+
+Motion is one lap. `prefers-reduced-motion` and print leave the drawings in their end state and park the job at the start of the lap. Under 900px the walking mark hides. Under 640px each layer is its own row. Print keeps the picture dark and sets the surrounding words in ink on white.
+
+The three judgement lines, the kill line, eight named-practice links, and the Always on strip sit under the picture. A framework picker does not.
+
 ## Storytelling robot
 
 `robot.js` is viewport chrome. It is not part of the decision card. The same module is inlined at the bottom of `index.html`, because Orbit publishes only that file to `https://alextouvras.com/field-card/` (`public/field-card/index.html`). A separate `robot.js` request 404s there.

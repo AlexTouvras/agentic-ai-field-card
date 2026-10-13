@@ -1,6 +1,6 @@
 # Agentic AI Field Card
 
-Standalone one-pager: [`index.html`](./index.html)
+Standalone one-pager: [`index.html`](./index.html). One job on a closed loop. It stops at the thinnest layer that can finish it.
 
 **Live:** after Pages is enabled → `https://alextouvras.github.io/agentic-ai-field-card/`
 
@@ -49,52 +49,31 @@ Copy from Orbit / Vercel as needed:
 
 ## What stays vs what churns
 
-| Stable (edit rarely) | Churn zone (weekly OK) |
+| Stable (edit rarely) | Churn zone (monthly OK) |
 |---|---|
-| 4-layer stack | Framework picker rows |
-| Problem → use logic | Concrete product names in examples |
-| Rules vs skills | Version stamp + Changed line + doc URLs |
-| Ladder, anti-patterns, kill switch | — |
+| The loop picture: RAG → Agent → MCP → A2A, then stop or next step | A named-practice URL, when a better public source for the same move exists |
+| H1, hook, verb line, LLM floor | Version stamp + Changed line |
+| Three judgement lines, kill line, Always on | — |
 
-New protocols earn a **new layer** only if they solve a new job (knowledge / control / tools / peers / behavior). A renamed framework is a picker-row swap, not a redesign.
+New protocols earn a **new station** only if they solve a new job (knowledge / control / tools / peers). A renamed framework does not go on the sheet. Rules and skills stay under judgement, not as extra stations.
 
-## Framework picker guidance
-
-| Constraint | Typical pick |
-|---|---|
-| Control / HITL / durable state | LangGraph |
-| Speed to role-based demo | CrewAI |
-| RAG / data-first | LlamaIndex |
-| Azure / .NET | MS Agent Framework |
-| Handoffs or Anthropic-native | OpenAI / Claude SDKs |
-| Schema-first typed Python | Pydantic AI |
-
-## Doc links (Use column + frameworks)
+## Doc links (named practices)
 
 | Label | Destination |
 |---|---|
 | RAG | https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview |
+| Workflow and agent | https://www.anthropic.com/engineering/building-effective-agents |
 | MCP | https://modelcontextprotocol.io/ |
-| Direct tools | https://platform.openai.com/docs/guides/function-calling |
-| Workflow / Agent | https://www.anthropic.com/engineering/building-effective-agents |
-| Rules | https://cursor.com/docs/rules |
-| Skill | https://cursor.com/docs/skills |
-| Human gate | https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop |
-| Fine-tune | https://platform.openai.com/docs/guides/fine-tuning |
 | A2A | https://a2a-protocol.org/ |
+| Rules | https://cursor.com/docs/rules |
+| Skills | https://cursor.com/docs/skills |
+| Human gate | https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop |
 | Evals | https://platform.openai.com/docs/guides/evals |
-| Bayesian opt | https://alextouvras.com/bayes-field-card/ |
-| LangGraph | https://langchain-ai.github.io/langgraph/ |
-| CrewAI | https://docs.crewai.com/ |
-| LlamaIndex | https://docs.llamaindex.ai/ |
-| MS Agent Framework | https://learn.microsoft.com/en-us/agent-framework/overview/ |
-| OpenAI Agents SDK | https://openai.github.io/openai-agents-python/ |
-| Claude Agent SDK | https://code.claude.com/docs/en/agent-sdk/overview |
-| Pydantic AI | https://ai.pydantic.dev/ |
+
+Direct tools, fine-tuning, and Bayesian optimisation stay off this sheet. A fixed path is a workflow. Changing facts stay in retrieval. A budget of expensive trials lives on the Bayesian optimisation card.
 
 ## Weekly refresh checklist (human)
 
 1. If Friday review missed, re-run the 18:00 review agent or `Apply review` — do not Slack-Approve
-2. Swap framework rows if the field moved
-3. Refresh example nouns if needed; keep the problem column intact
-4. Leave ladder and anti-patterns alone unless the pattern itself changed
+2. Read the loop. Update only when a station teaches the wrong move, the stop is gone, or a named-practice URL is dead
+3. Leave the picture alone on a no-change week. Do not put the job table or a framework picker back in front of it

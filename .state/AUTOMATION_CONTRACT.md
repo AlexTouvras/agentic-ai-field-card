@@ -21,6 +21,7 @@
 | Weekly judgment | Cursor weekly-content-pass Fri 17:00 | discover + PR `## Summary` | Friday 18:00 review agent |
 | Weekly review | Orbit Cursor automation Fri 18:00 | Apply review | review agent publishes |
 | Judgment watchdog | GHA `judgment-watchdog.yml` Mon | `#orbit` warn/fail | human if Friday missed |
+| Site sync | GHA `sync-site.yml` when `index.html` lands on `main` | copy onto alextouvras.com | none |
 
 ## Scope (one run = one item)
 

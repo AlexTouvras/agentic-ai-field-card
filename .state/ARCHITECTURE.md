@@ -4,7 +4,7 @@
 
 The public card follows the decision-guide picture. The headline is `Don't start with an agent.` A business problem branches to a workflow, retrieval, or an agent. Four pattern buttons state why that choice fits and when to move up. Section 2 is the loop: observe, decide, act, verify, a human gate, and a retry. Architecture is six jobs with real doc links, not a vendor menu. A2A is a boundary sentence. Prove it names six bars and does not print invented rates.
 
-The sheet is a dark navy stage with a cyan glow. Selecting a pattern lights that branch. `prefers-reduced-motion` leaves the selected branch drawn and does not pulse the loop. Under 980px the loop stacks. Under 720px the branch wires hide and the choices stack. The storytelling robot stays viewport chrome.
+The sheet is a dark navy stage with a cyan glow. Selecting a pattern lights that branch. `prefers-reduced-motion` leaves the selected branch drawn and does not pulse the loop. Under 980px the loop stacks: the icon stays on the left, and the step name and sentence sit in the column beside it. Under 720px the branch wires hide and the choices stack. The storytelling robot stays viewport chrome.
 
 ## Storytelling robot
 

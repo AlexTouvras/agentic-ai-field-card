@@ -16,6 +16,7 @@
 | Weekly judgment | Cursor Fri 17:00 | PR `## Summary` | none — stop for review |
 | Weekly review | Orbit Cursor Fri 18:00 | Apply review + #orbit FYI | review agent is the gate |
 | Judgment watchdog | GHA `judgment-watchdog.yml` Mon | #orbit FYI if PR still open | re-run review agent |
+| Site sync | GHA `sync-site.yml` on push to `main` when `index.html` changes | copies the card to alextouvras.com | none — the merge already happened |
 
 ## Required secrets
 
